@@ -17,6 +17,7 @@ import java.util.List;
 
 import javax.swing.JTable;
 
+import ko.or.kosta.ams.util.GuiUtil;
 import kr.or.kosta.ams.model.Account;
 import kr.or.kosta.ams.model.AccountManager;
 import kr.or.kosta.ams.model.MinusAccount;
@@ -78,16 +79,6 @@ public class MainFrame extends Frame {
 	}
 	
 	/**
-	 *  콤마로찍기
-	 *  포맷터가 초기화 되지않는 현상으로 아래와 같이 처리했습니다.
-	 *  인터넷 참조하였습니다.
-	 */
-	public static String numFormat(long num) {
-		  DecimalFormat df = new DecimalFormat("#,###");
-		  return df.format(num);
-	}
-	
-	/**
 	 * 상단 기본틀 및 출력
 	 */
 	
@@ -128,10 +119,10 @@ public class MainFrame extends Frame {
 		sb.append(checkAcc(acc));
 		sb.append(acc.getAccountNum() + "\t\t");
 		sb.append(acc.getAccountOwner() + "\t\t");
-		sb.append(numFormat(acc.getRestMoney()) + "\t\t");
+		sb.append(GuiUtil.numFormat(acc.getRestMoney()) + "\t\t");
 		if (acc instanceof MinusAccount) {
 			MinusAccount mAcc = (MinusAccount)acc;
-			sb.append(numFormat(mAcc.getBorrowMoney()) + "\t\t");
+			sb.append(GuiUtil.numFormat(mAcc.getBorrowMoney()) + "\t\t");
 		}
 		return sb;
 	}
@@ -149,10 +140,10 @@ public class MainFrame extends Frame {
 			sb.append(checkAcc(acc));
 			sb.append(acc.getAccountNum() + "\t\t");
 			sb.append(acc.getAccountOwner() + "\t\t");
-			sb.append(numFormat(acc.getRestMoney()) + "\t\t");
+			sb.append(GuiUtil.numFormat(acc.getRestMoney()) + "\t\t");
 			if (acc instanceof MinusAccount) {
 				MinusAccount mAcc = (MinusAccount)acc;
-				sb.append(numFormat(mAcc.getBorrowMoney()) + "\t\t");
+				sb.append(GuiUtil.numFormat(mAcc.getBorrowMoney()) + "\t\t");
 //				sb.append(mAcc.getBorrowMoney() + "\t\t");
 			}
 			sb.append("\n");

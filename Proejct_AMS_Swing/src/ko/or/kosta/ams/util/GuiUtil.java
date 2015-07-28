@@ -28,4 +28,14 @@ public class GuiUtil {
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		container.setSize(toolkit.getScreenSize());
 	}
+	
+	/**
+	 *  콤마로찍기
+	 *  포맷터가 초기화 되지않는 현상으로 아래와 같이 처리했습니다.
+	 *  인터넷 참조하였습니다.
+	 */
+	public static String numFormat(long num) {
+		  DecimalFormat df = new DecimalFormat("#,###");
+		  return df.format(num);
+	}
 }

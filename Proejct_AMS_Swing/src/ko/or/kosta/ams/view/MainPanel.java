@@ -17,6 +17,13 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import kr.or.kosta.ams.model.AccountManager;
+
+/**
+ * 상단의 
+ * @author Lee Gwangyong
+ *
+ */
 public class MainPanel extends Panel {
 	JLabel accKindLB, accNumLB, accOwnrLB, passLB, accDrawMoneyLB ,accBrowLB;
 	JTextField accNumTF, accOwnrTF, passTF, accDrawMoneyTF, accBrowTF;
@@ -26,6 +33,7 @@ public class MainPanel extends Panel {
 	
 	GridBagLayout gridBagLayout;
 	GridBagConstraints gridBagConstraints;
+	
 	
 	public MainPanel(){
 		accKindLB = new JLabel("계좌종류");
@@ -64,7 +72,9 @@ public class MainPanel extends Panel {
 	
 	
 	
-	// 화면 구성
+	/**
+	 * 화면 구성
+	 */
 	public void setComponents(){
 		
 		setLayout(gridBagLayout);
@@ -101,7 +111,16 @@ public class MainPanel extends Panel {
 		
 	}
 	
-	// 그리드백 구성
+	/**
+	 * 그리드 백 구성
+	 * @param component
+	 * @param gridx
+	 * @param gridy
+	 * @param gridwidth
+	 * @param gridheight
+	 * @param weightx
+	 * @param weighty
+	 */
 	private void add(Component component, int gridx, int gridy, int gridwidth, int gridheight, double weightx, double weighty){
 		gridBagConstraints.gridx = gridx;
 		gridBagConstraints.gridy = gridy;
@@ -112,6 +131,13 @@ public class MainPanel extends Panel {
 		gridBagLayout.setConstraints(component, gridBagConstraints);
 		add(component);
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 //	public static void main(String[] args) {
 //		Frame frame = new Frame();

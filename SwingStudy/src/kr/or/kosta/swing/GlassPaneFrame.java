@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import kr.or.kosta.swing.util.GuiUtil;
 
 public class GlassPaneFrame extends JFrame {
 	
@@ -51,8 +52,8 @@ public class GlassPaneFrame extends JFrame {
 		GlassPaneFrame frame = new GlassPaneFrame();
 		frame.setComponents();
 		frame.setSize(600, 500);
+		GuiUtil.setLookNFeel(frame, GuiUtil.THEME_NIMBUS);
 		frame.setVisible(true);
 		frame.eventRegist();
 	}
 }
-
