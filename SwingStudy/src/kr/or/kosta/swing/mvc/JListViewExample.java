@@ -26,9 +26,9 @@ public class JListViewExample extends JFrame {
 	public JListViewExample(String title) {
 		super(title);
 		model = new DefaultListModel<String>();
-		model.addElement("민형");
-		model.addElement("재하");
-		model.addElement("퇴폐");
+		model.addElement("김민형");
+		model.addElement("이재하");
+		model.addElement("박퇴폐");
 		list = new JList<String>();
 		list.setModel(model);
 		cellRenderer = new MyCellRenderer();

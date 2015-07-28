@@ -12,6 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import kr.or.kosta.swing.util.GuiUtil;
+
 public class JOptionPaneFrame extends JFrame {
 	JButton messageButton, confirmButton, inputButton, optionButton;
 	
@@ -49,13 +51,13 @@ public class JOptionPaneFrame extends JFrame {
 	
 	public void showMessageDialog(){
 //		JOptionPane.showMessageDialog(this, "서일대 집에가~~~~");
-		JOptionPane.showMessageDialog(this, "스윙 참 쉽죠..","공지사항", JOptionPane.QUESTION_MESSAGE);
+		JOptionPane.showMessageDialog(this, "스윙 참 쉽죠..","공지사항", JOptionPane.ERROR_MESSAGE);
 	}
 	
 	public void showConfirmDialog(){
 //		int answer = JOptionPane.showConfirmDialog(this, "승우야 밥 먹었냐?");
-		int answer = JOptionPane.showConfirmDialog(this, "승우야 밥 먹었냐?", "물어봅니다", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-//		int answer = JOptionPane.showConfirmDialog(this, "승우야 밥 먹었냐?", "물어봅니다", JOptionPane.YES_NO_OPTION, 0, new ImageIcon("images/naver.gif"));
+//		int answer = JOptionPane.showConfirmDialog(this, "승우야 밥 먹었냐?", "물어봅니다", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		int answer = JOptionPane.showConfirmDialog(this, "승우야 밥 먹었냐?", "물어봅니다", JOptionPane.YES_NO_OPTION, 0, new ImageIcon("classes/images/icons4680.png"));
 		switch (answer) {
 			case JOptionPane.OK_OPTION:
 				System.out.println("집에가");			
@@ -125,6 +127,7 @@ public class JOptionPaneFrame extends JFrame {
 		JOptionPaneFrame frame = new JOptionPaneFrame();
 		frame.setComponents();
 		frame.setSize(500, 300);
+		GuiUtil.setLookNFeel(frame, GuiUtil.THEME_NIMBUS);
 		frame.setVisible(true);
 		frame.eventRegist();
 	}

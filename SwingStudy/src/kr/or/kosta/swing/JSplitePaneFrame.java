@@ -28,6 +28,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
+import kr.or.kosta.swing.util.GuiUtil;
+
 public class JSplitePaneFrame extends JFrame {
 	JSplitPane splitePane;
 	JSplitPane rightSplitePane;
@@ -41,6 +43,7 @@ public class JSplitePaneFrame extends JFrame {
 		super(title);
 		splitePane = new JSplitPane();
 		splitePane.setOneTouchExpandable(true);
+//		splitePane.setOneTouchExpandable(false);
 		rightSplitePane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
 		rightSplitePane.setTopComponent(new JButton("위쪽"));
 		
@@ -79,6 +82,7 @@ public class JSplitePaneFrame extends JFrame {
 		JSplitePaneFrame frame = new JSplitePaneFrame();
 		frame.setComponents();
 		frame.setSize(500, 300);
+		GuiUtil.setLookNFeel(frame, GuiUtil.THEME_NIMBUS);
 		frame.setVisible(true);
 		frame.eventRegist();
 	}

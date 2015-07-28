@@ -12,6 +12,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
+import kr.or.kosta.swing.util.GuiUtil;
+
 public class JTabbedPaneFrame extends JFrame {
 	JTabbedPane tabPane;
 	
@@ -21,8 +23,8 @@ public class JTabbedPaneFrame extends JFrame {
 
 	public JTabbedPaneFrame(String title) {
 		super(title);
-		tabPane = new JTabbedPane();
-//		tabPane = new JTabbedPane(JTabbedPane.BOTTOM);
+//		tabPane = new JTabbedPane();
+		tabPane = new JTabbedPane(JTabbedPane.TOP);
 		tabPane.addTab("계좌등록", new RegistPanel());
 		tabPane.addTab("계좌목록", createImageIcon("classes/images/add_index.gif"), new JLabel("계좌목록 화면입니다.."));
 		tabPane.addTab("계좌검색", createImageIcon("classes/images/add_index.gif"), new JLabel("계좌검색 화면입니다.."));
@@ -55,6 +57,7 @@ public class JTabbedPaneFrame extends JFrame {
 	public static void main(String[] args) {
 		JTabbedPaneFrame frame = new JTabbedPaneFrame();
 		frame.setComponents();
+		GuiUtil.setLookNFeel(frame, GuiUtil.THEME_NIMBUS);
 		frame.setSize(800, 600);
 		frame.setVisible(true);
 		frame.eventRegist();

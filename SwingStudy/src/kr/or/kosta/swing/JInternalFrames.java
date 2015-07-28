@@ -35,7 +35,7 @@ public class JInternalFrames extends JFrame {
 		//jif2.setSize(200, 200);
 		jif2.setBounds(300, 100, 200, 200);
 		jif2.setVisible(true);
-		
+		                                                                                                                
 		mif = new MyInternalFrame("사용자정의내부프레임");
 		mif.setBounds(100, 100, 300, 300);
 		mif.setVisible(true);
@@ -63,7 +63,7 @@ public class JInternalFrames extends JFrame {
 	public static void main(String[] args) {
 		JInternalFrames frame = new JInternalFrames();
 		frame.setComponents();
-		frame.setSize(600, 500);
+		frame.setSize(600, 500);;
 		frame.setVisible(true);
 		frame.eventRegist();
 	}

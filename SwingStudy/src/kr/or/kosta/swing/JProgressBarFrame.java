@@ -10,6 +10,8 @@ import javax.swing.JProgressBar;
 import javax.swing.JSlider;
 import javax.swing.JSpinner;
 
+import kr.or.kosta.swing.util.GuiUtil;
+
 public class JProgressBarFrame extends JFrame {
 	JProgressBar pb;
 	JSlider slier;
@@ -77,6 +79,7 @@ public class JProgressBarFrame extends JFrame {
 		JProgressBarFrame frame = new JProgressBarFrame();
 		frame.setComponents();
 		frame.setSize(400, 300);
+		GuiUtil.setLookNFeel(frame, GuiUtil.THEME_NIMBUS);
 		frame.setVisible(true);
 		frame.eventRegist();
 		frame.progress();
