@@ -23,8 +23,8 @@ public class EmployeeTableModel extends AbstractTableModel {
 		employeeList = new Vector<Employee>();
 		// 테스트를 위한 사원데이터
 		//System.out.println(getClass().getResource("/images"));
-		Employee emp1 = new Employee("김기정", "1234", "KOSTA", 40, 53.56, true, new ImageIcon(getClass().getResource("/images/add.gif")));
-		Employee emp2 = new Employee("박기순", "1234", "KOSTA", 40, 53.56, false, new ImageIcon(getClass().getResource("/images/add_index.gif")));
+		Employee emp1 = new Employee("김기정", "1234", "KOSTA", 40, 53.56, true, new ImageIcon(("classes/images/icons4680.png")));
+		Employee emp2 = new Employee("박기순", "1234", "KOSTA", 40, 53.56, false, new ImageIcon(("classes/images/icons5139.png")));
 		employeeList.addElement(emp1);
 		employeeList.addElement(emp2);
 	}

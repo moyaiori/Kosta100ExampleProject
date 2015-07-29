@@ -33,13 +33,13 @@ public class JTableExample extends JFrame {
 	public JTableExample(String title) {
 		super(title);
 		// 테이블이 보여주는 모델
-		Object[][] cellDatas = {{"김기정", "87342065", "무역하과"}, 
-				                {"박기정", "87342065", "무역하과"},
-				                {"최기정", "87342065", "무역하과"}
+		Object[][] cellDatas = {{"김기정", "87342065", "무역학과"}, 
+				                {"박기정", "87342065", "무역학과"},
+				                {"최기정", "87342065", "무역학과"}
 				               };
 		Object[] headerNames = {"이름", "학번", "학과"};
-		//table = new JTable(5, 5);
-		table = new JTable(cellDatas, headerNames);
+		table = new JTable(5, 5);
+//		table = new JTable(cellDatas, headerNames);
 		
 	}
 

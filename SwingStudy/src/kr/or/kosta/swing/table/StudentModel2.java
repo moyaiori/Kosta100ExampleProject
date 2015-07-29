@@ -72,9 +72,9 @@ public class StudentModel2 extends AbstractTableModel {
 		fireTableStructureChanged();
 	}
 	
-	public void setStudent(Student student){
-		cellDatas.clear();
-		cellDatas.addElement(student);
+	public void updateStudent(int row, String major){
+		Student student =  cellDatas.elementAt(row);
+		student.setMajor(major);
 		// 뷰에게 변경을 통보
 		fireTableStructureChanged();
 	}

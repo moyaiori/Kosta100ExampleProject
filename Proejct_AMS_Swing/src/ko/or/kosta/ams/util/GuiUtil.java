@@ -4,6 +4,9 @@ import java.awt.Container;
 import java.awt.Toolkit;
 import java.text.DecimalFormat;
 
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
 /**
  * GUI관련된 공통 유틸리티 메소드
  * @author Lee Gwangyong
@@ -37,5 +40,26 @@ public class GuiUtil {
 	public static String numFormat(long num) {
 		  DecimalFormat df = new DecimalFormat("#,###");
 		  return df.format(num);
+	}
+	
+	public static final String THEME_SWING = "javax.swing.plaf.metal.MetalLookAndFeel";
+	public static final String THEME_WINDOW = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
+	public static final String THEME_UNIX = "com.sun.java.swing.plaf.motif.MotifLookAndFeel";
+	public static final String THEME_NIMBUS= "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel";
+	public static final String THEME_OS= UIManager.getSystemLookAndFeelClassName();
+	
+	/**
+	 * 룩엔필(Look&Feel) 설정
+	 * @param jcomponent		 설정할 대상
+	 * @param className			 look&Feel 종류
+	 */
+	public static void setLookNFeel(Container container, String className){
+		try {
+			UIManager.setLookAndFeel(className);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		SwingUtilities.updateComponentTreeUI(container);
 	}
 }

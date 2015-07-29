@@ -19,6 +19,7 @@ public class JTableExample2 extends JFrame {
 	JTable table;
 	
 	// 테이블이 보여 는 모델
+	// 백터를 저장하는 백터 선언(2차원배열 스타일)
 	Vector<Vector<String>> cellDatas;
 	
 	Vector<String> headerNames;

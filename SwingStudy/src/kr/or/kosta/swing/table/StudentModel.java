@@ -3,8 +3,9 @@ package kr.or.kosta.swing.table;
 import java.util.Vector;
 
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableModel;
 
-public class StudentModel extends AbstractTableModel {
+public class StudentModel extends AbstractTableModel implements TableModel {
 	
 	Vector<String> headerNames;
 	Vector<Vector<String>> cellDatas;
@@ -33,6 +34,8 @@ public class StudentModel extends AbstractTableModel {
 		
 	}
 
+	// 주로 뷰에게 데이터를 제공하기 위한 역할의 메소드들
+	// 반드시 구현해야 하는 구현 메소드(추상메서드)
 	@Override
 	public int getRowCount() {
 		return cellDatas.size();
