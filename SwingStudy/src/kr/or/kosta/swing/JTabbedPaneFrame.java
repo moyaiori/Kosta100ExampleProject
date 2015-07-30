@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Label;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.net.URL;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -26,16 +27,17 @@ public class JTabbedPaneFrame extends JFrame {
 //		tabPane = new JTabbedPane();
 		tabPane = new JTabbedPane(JTabbedPane.TOP);
 		tabPane.addTab("계좌등록", new RegistPanel());
-		tabPane.addTab("계좌목록", createImageIcon("classes/images/add_index.gif"), new JLabel("계좌목록 화면입니다.."));
-		tabPane.addTab("계좌검색", createImageIcon("classes/images/add_index.gif"), new JLabel("계좌검색 화면입니다.."));
-		tabPane.addTab("계좌삭제", createImageIcon("classes/images/add_index.gif"), new JLabel("계좌삭제 화면입니다.."));
+		// TODO 실행안됨
+		tabPane.addTab("계좌목록", createImageIcon(getClass().getResource("/images/add_index.gif")), new JLabel("계좌목록 화면입니다.."));
+		tabPane.addTab("계좌검색", createImageIcon(getClass().getResource("/images/add_index.gif")), new JLabel("계좌검색 화면입니다.."));
+		tabPane.addTab("계좌삭제", createImageIcon(getClass().getResource("/images/add_index.gif")), new JLabel("계좌삭제 화면입니다.."));
 	}
 
 	public void setComponents() {
 		add(tabPane, BorderLayout.CENTER);
 	}
 	
-	private Icon createImageIcon(String path) {
+	private Icon createImageIcon(URL path) {
 		return new ImageIcon(path);
 	}
 

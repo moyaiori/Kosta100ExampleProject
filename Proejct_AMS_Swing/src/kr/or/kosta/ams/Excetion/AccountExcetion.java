@@ -1,4 +1,4 @@
-package kr.or.kosta.ams.Excetion;
+package kr.or.kosta.ams.excetion;
 /**
  * 사용자 정의 예외 클래스(업무예외)
  * @author Lee Gwangyong

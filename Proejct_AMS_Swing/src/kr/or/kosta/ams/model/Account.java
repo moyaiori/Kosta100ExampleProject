@@ -2,7 +2,8 @@ package kr.or.kosta.ams.model;
 import java.util.Formatter;
 
 import javax.security.auth.login.AccountException;
-import kr.or.kosta.ams.Excetion.AccountExcetion;;
+
+import kr.or.kosta.ams.excetion.AccountExcetion;;
 
 /**
  * 은행계좌 객체 추상화(모델링)
