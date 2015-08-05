@@ -142,7 +142,7 @@ public class Inventory {
 	 */
 	public List<Instrument> search(InstrumentSpecification spec) {
 		Hashtable<specPropertie, Object> value = getSearchValue(spec); // 검색어와 검색어의타입
-		System.out.println("value : "+ value);
+//		System.out.println("value : "+ value);
 		Set<specPropertie> tempSet = value.keySet(); // 검색어 키값(타입) 추출
 		specPropertie[] keyArray = new specPropertie[tempSet.size()]; // 검색어 크기만큼 배열 생성
 //		System.out.println("search keyArray0 : " + keyArray[0]);
@@ -170,10 +170,10 @@ public class Inventory {
 	 */
 	public ArrayList<Instrument> loopFun(int keyNum, ArrayList<Instrument> list, specPropertie[] keyArray,
 			Hashtable<specPropertie, Object> value) {
-		System.out.println("keyNum : " + keyNum);
-		System.out.println("list : " + list);
-		System.out.println("keyArray : " + keyArray[0]);
-		System.out.println("value : " + value);
+//		System.out.println("keyNum : " + keyNum);
+//		System.out.println("list : " + list);
+//		System.out.println("keyArray : " + keyArray[0]);
+//		System.out.println("value : " + value);
 		
 		int getListSize = list.size();
 		ArrayList<Instrument> resultList = new ArrayList<Instrument>();
@@ -183,19 +183,19 @@ public class Inventory {
 		
 		
 		if (keyNum == 0) {
-			System.out.println("end of Function");
+//			System.out.println("end of Function");
 			return list;
 		} else {
 			keyNum--;
 			for (int i = 0; i < getListSize; i++) {
 				KeyByValue = value.get(keyArray[keyNum]);
 				g = list.get(i);
-				System.out.println("KeyByValue : " + KeyByValue);
+//				System.out.println("KeyByValue : " + KeyByValue);
 				if (KeyByValue.equals(getGuitarAttribute(keyArray[keyNum], g))) {
 					resultList.add(g);
 				}
 			}
-			System.out.println("resultList : " + resultList);
+//			System.out.println("resultList : " + resultList);
 			return loopFun(keyNum, resultList, keyArray, value);
 		}
 	}
@@ -245,7 +245,7 @@ public class Inventory {
 	 * @return
 	 */
 	public Hashtable<specPropertie, Object> getSearchValue(InstrumentSpecification spec) {
-		System.out.println("getSearchValue : " + spec);
+//		System.out.println("getSearchValue : " + spec);
 		Hashtable<specPropertie, Object> result = new Hashtable<specPropertie, Object>();
 		
 		if (spec.getProperty(specPropertie.BUILDERS) != null) {

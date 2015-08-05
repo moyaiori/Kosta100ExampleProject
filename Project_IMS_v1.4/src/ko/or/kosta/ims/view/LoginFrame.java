@@ -51,15 +51,15 @@ public class LoginFrame extends JFrame{
 	 * @return
 	 */
 	public boolean checkLogin(){
-		System.out.println("로그인");
+//		System.out.println("로그인");
 		
 		if (loginPanel.idTF.getText().equals(id) && loginPanel.passTF.getText().equals(password)) {
-			System.out.println("아이디 확인");
+//			System.out.println("아이디 확인");
 			viewMainUI();
 			exit();
 			return true;
 		}else{
-			System.out.println("로그인 실패");
+//			System.out.println("로그인 실패");
 			JOptionPane.showMessageDialog(this, "아이디 혹은 패스워드를 입력하지않았거나 맞지않습니다.", "로그인 실패", JOptionPane.ERROR_MESSAGE);
 			loginPanel.idTF.setText("");
 			loginPanel.passTF.setText("");
@@ -72,7 +72,7 @@ public class LoginFrame extends JFrame{
 	 */
 	private void viewMainUI(){
 		mainFrame = new MainFrame();
-		mainFrame.setSize(550, 680);
+		mainFrame.setSize(550, 730);
 		GuiUtil.setCenterScreen(mainFrame);
 		GuiUtil.setLookNFeel(mainFrame, GuiUtil.THEME_NIMBUS);
 		

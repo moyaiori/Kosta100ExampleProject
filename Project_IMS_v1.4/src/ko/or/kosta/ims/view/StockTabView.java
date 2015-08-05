@@ -221,7 +221,7 @@ public class StockTabView extends JPanel{
 	 * 전체 악기 리스트 보여주기
 	 */
 	private void printAllinstrument(){
-		System.out.println("inventory.searchAll() : " + inventory.searchAll());
+//		System.out.println("inventory.searchAll() : " + inventory.searchAll());
 		instruModel.resultInstrumentsList(inventory.searchAll());
 	}
 	

@@ -6,6 +6,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -85,8 +87,8 @@ public class NewTabView extends JPanel{
 		
 		this.inventory = inventory;
 
-		setComponents();
-		eventRegist();
+//		setComponents();
+//		eventRegist();
 	}
 	
 	public void setComponents(){
@@ -211,17 +213,15 @@ public class NewTabView extends JPanel{
 	}
 	
 	/**
-	 * 
+	 * 악기 생성하기
 	 */
 	private void addInstrument(){
 		InstrumentSpecification spec = new InstrumentSpecification();
 		
-//		System.out.println((Instruments)instrumentsCB.getSelectedItem());
-//		System.out.println(instrumentsCB.getSelectedItem().toString());
-//		System.out.println(Instruments.valueOf("GUITAR"));
-		// 여기까지
-		
 		double temp = 0.0;
+		if (priceTF.getText().isEmpty()) {
+			priceTF.setText("0");
+		}
 		temp = Double.parseDouble(priceTF.getText());
 		
 		spec.setProperty(specPropertie.BUILDERS ,buildersCB.getSelectedItem());
@@ -229,18 +229,33 @@ public class NewTabView extends JPanel{
 		spec.setProperty(specPropertie.TOPWOOD ,topWoodCB.getSelectedItem());
 		spec.setProperty(specPropertie.BACKWOOD ,backWoodCB.getSelectedItem());
 		spec.setProperty(specPropertie.MODEL ,modelTF.getText());
+		
+		if (instrumentsCB.getSelectedItem() == Instruments.MANDOLIN) {
+			spec.setProperty(specPropertie.STYLE ,styleCB.getSelectedItem());
+		}
+		
+		
 		inventory.add((Instruments)instrumentsCB.getSelectedItem(),serialNumberTF.getText(), temp, spec);
 		
-		System.out.println(spec);
-
-		
-//		spec.setProperty(specPropertie.TYPE ,typesCB.getSelectedItem());
-//		spec.setProperty(specPropertie.TOPWOOD ,topWoodCB.getSelectedItem());
-//		spec.setProperty(specPropertie.BACKWOOD ,backWoodCB.getSelectedItem());
-//		spec.setProperty(specPropertie.MODEL ,"AAAA");
-//		inventory.add(Instruments.valueOf(instrumentsCB.getSelectedItem().toString()) , serialNumberTF.getText(), priceTF.getText(), spec));
+//		System.out.println(spec);
 		
 	}
+	/**
+	 * 스타일(만돌린)활성화 상태 변경
+	 * @param bool
+	 */
+	private void setEnableBrowTF(boolean bool){
+		if (bool) {
+			styleCB.setEnabled(true);
+		}else{
+			styleCB.setEnabled(false);
+		}
+	}
+	
+	/**
+	 * 스타일(만돌린) 활성화 상태
+	 */
+	
 	
 	public void eventRegist(){
 		registBtn.addActionListener(new ActionListener() {
@@ -248,8 +263,20 @@ public class NewTabView extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println("야호");
 				addInstrument();
+			}
+		});
+		
+		instrumentsCB.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(instrumentsCB.getSelectedItem() == Instruments.MANDOLIN){
+//					System.out.println("만돌린");
+					setEnableBrowTF(true);
+				}else if(instrumentsCB.getSelectedItem() == Instruments.GUITAR){
+//					System.out.println("기타");
+					setEnableBrowTF(false);
+				}
 			}
 		});
 	}

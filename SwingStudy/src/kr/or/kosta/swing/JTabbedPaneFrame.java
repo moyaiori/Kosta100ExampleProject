@@ -1,6 +1,7 @@
 package kr.or.kosta.swing;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Label;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -28,9 +29,13 @@ public class JTabbedPaneFrame extends JFrame {
 		tabPane = new JTabbedPane(JTabbedPane.TOP);
 		tabPane.addTab("계좌등록", new RegistPanel());
 		// TODO 실행안됨
-		tabPane.addTab("계좌목록", createImageIcon(getClass().getResource("/images/add_index.gif")), new JLabel("계좌목록 화면입니다.."));
-		tabPane.addTab("계좌검색", createImageIcon(getClass().getResource("/images/add_index.gif")), new JLabel("계좌검색 화면입니다.."));
-		tabPane.addTab("계좌삭제", createImageIcon(getClass().getResource("/images/add_index.gif")), new JLabel("계좌삭제 화면입니다.."));
+//		tabPane.addTab("계좌목록", createImageIcon(getClass().getResource("/images/add_index.gif")), new JLabel("계좌목록 화면입니다.."));
+		tabPane.addTab("계좌목록1", new JLabel("계좌목록 화면입니다.."));
+		tabPane.addTab("계좌목록2", new JLabel("계좌목록 화면입니다.."));
+		tabPane.addTab("계좌목록3", new JLabel("계좌목록 화면입니다.."));
+//		tabPane.addTab("계좌검색", createImageIcon(getClass().getResource("/images/add_index.gif")), new JLabel("계좌검색 화면입니다.."));
+//		tabPane.addTab("계좌삭제", createImageIcon(getClass().getResource("/images/add_index.gif")), new JLabel("계좌삭제 화면입니다.."));
+
 	}
 
 	public void setComponents() {

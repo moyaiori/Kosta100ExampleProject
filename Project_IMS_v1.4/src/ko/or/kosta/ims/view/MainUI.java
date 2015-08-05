@@ -29,7 +29,6 @@ public class MainUI extends JPanel {
 	public MainUI() {
 		
 		inventory = new Inventory();
-
 		newTabView = new NewTabView(inventory);
 		stockTabView = new StockTabView(inventory);
 		
@@ -38,6 +37,8 @@ public class MainUI extends JPanel {
 		tabPane.addTab("신규악기등록", newTabView);
 		setComponents();
 		stockTabView.eventRegist();
+		newTabView.eventRegist();
+		newTabView.setComponents();
 	}
 
 	public void setComponents() {

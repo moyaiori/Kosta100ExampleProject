@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -26,8 +27,9 @@ import javax.swing.JTextField;
 public class LoginUI extends JPanel{
 
 	JPanel panel;
-	JTextField idTF, passTF;
-	JLabel idL, passL;
+	JTextField idTF;
+	JPasswordField passTF;
+	JLabel idL, passL, idAndPass;
 	JButton loginBtn, signUpBtn;
 	
 	GridBagConstraints gc;
@@ -39,7 +41,7 @@ public class LoginUI extends JPanel{
 	public LoginUI() {
 
 		idTF = new JTextField();
-		passTF = new JTextField();
+		passTF = new JPasswordField();
 		idL = new JLabel("아이디");
 		passL = new JLabel("비밀번호");
 		loginBtn = new JButton("로그인");
@@ -78,12 +80,11 @@ public class LoginUI extends JPanel{
 	}
 	
 	@Override
-	public void paint(Graphics g) {
+	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
 		g.drawImage(bgImage, 0, 0, getWidth(), getHeight() , this);
-		super.paint(g);
-		setOpaque(false);
 	}
+	
 
 	private void addGrid(GridBagLayout gbl, GridBagConstraints gbc, Component c, int gridx, int gridy, int gridwidth,
 			int gridheight, double weightx, double weighty) {

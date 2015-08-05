@@ -1,5 +1,4 @@
 package ko.or.kosta.ams.view;
-import java.awt.BorderLayout;
 import java.awt.Frame;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
