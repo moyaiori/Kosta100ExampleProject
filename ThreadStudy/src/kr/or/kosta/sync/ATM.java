@@ -35,7 +35,7 @@ public class ATM {
 	/** 출금 */
 	public  /*synchronized*/ void withdrawMoney(String accountNum, int passwd, long money, String user) throws Exception{
 		
-		//synchronized (Account.class) {
+		synchronized (Account.class) {
 			System.out.println("***** " + user + " 출금 시작 *****");
 			
 			if(!checkAccountNum(accountNum)){
@@ -55,7 +55,7 @@ public class ATM {
 			Thread.sleep(300);
 			System.out.println(user+" 출금 후 잔액 : " + account.getRestMoney());
 			System.out.println("***** " + user + " 출금 완료 *****");
-		//}
+		}
 	}
 
 	private boolean checkAccountNum(String accountNum) throws Exception{

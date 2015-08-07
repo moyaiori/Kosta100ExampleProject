@@ -16,6 +16,7 @@ public class Family extends Thread{
 	}
 	
 	/** 동기화 처리 되지 않은 경우 */
+	/*
 	public void run() {
 		// 스레드에서 공유계좌의 금액 출금
 		try {
@@ -25,14 +26,14 @@ public class Family extends Thread{
 			System.out.println(e.getMessage());
 		}
 	}
-	
+	*/
 	/** synchronized{} 블럭을 이용한 동기화 문제 해결 */
 	/*
 	public void run() {
 		// 스레드에서 공유계좌의 금액 출금
 		try {
 			synchronized (atm.account) {
-				atm.withdrawMoney("111-222-333", 1111, 10000, getName());
+				atm.withdrawMoney("1111-2222", 1111, 10000, getName());
 			}
 			
 		} catch (Exception e) {
@@ -49,7 +50,7 @@ public class Family extends Thread{
 		try {
 			synchronized (atm.account) {
 				for(int i=0; i<10; i++){
-					atm.withdrawMoney("111-222-333", 1111, 10000, getName());
+					atm.withdrawMoney("1111-2222", 1111, 10000, getName());
 				}
 			}
 		} catch (Exception e) {
@@ -59,13 +60,15 @@ public class Family extends Thread{
 	*/
 	
 	/** wait(), notify()/notifyAll() 메소드를 이용한 기아 및 데드락 문제 해결*/
-	/*
+	
 	public void run() {
 		// 스레드에서 공유계좌의 금액 출금
 		try {
 			synchronized (atm.account) {
 				for(int i=0; i<10; i++){
-					atm.withdrawMoney("111-222-333", 1111, 10000, getName());
+					atm.withdrawMoney("1111-2222", 1111, 10000, getName());
+					// 처음에는 혹시라도 처음에 대기하고있는 객체가 있을수 있어서 처리
+					// wait, notify는 Object에 있다.
 					atm.account.notify();
 					//atm.account.notifyAll();
 					atm.account.wait();
@@ -76,5 +79,5 @@ public class Family extends Thread{
 			System.out.println(e.getMessage());
 		}
 	}
-	*/
+	
 }
