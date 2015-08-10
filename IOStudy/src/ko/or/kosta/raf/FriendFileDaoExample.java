@@ -25,7 +25,7 @@ public class  FriendFileDaoExample{
 			System.out.println("정상적으로 등록되었습니다..");
 		}catch(Exception ex){
 			System.out.println("등록시 에러가 발생하였습니다: " + ex);			
-		} 
+		}
 		
 		// 전체 리스트..
 		System.out.println("***** 등록된 모든 친구 리스트(총 "+fileManager.getRecordCount()+"명) *****");

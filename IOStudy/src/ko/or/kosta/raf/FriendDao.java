@@ -62,11 +62,12 @@ public class FriendDao{
 		double weight = friend.getWeight();
 		String telephone = friend.getTelephone();
 		
+		// 이름 글자수를 가져오기위해 char로 한다.
+		// UTF로 쓸경우 크기를 가져올수 없다.
 		int charCount = name.length();		
-		charCount = name.length();
 		//10바이트(5글자)로 이름 저장
 		for(int i = 0; i < (NAME_LENGTH/2); i++){		
-			// EX) "김기정  "
+			// EX) "김기정  ", 이름을 쓴 나머지 바이트를 채워서 넣는다.
 			randomAccessFile.writeChar((i<charCount ? name.charAt(i) : ' '));
 		}
 		
@@ -94,7 +95,7 @@ public class FriendDao{
 		ArrayList<Friend> list = new ArrayList<Friend>();
 		for(int i=0; i<recordCount; i++){
 			Friend friend = getRecord(i);
-			list.add(friend);		
+			list.add(friend);
 		}
 		return list;
 	}
