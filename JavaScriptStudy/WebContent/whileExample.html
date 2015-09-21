@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+//var array = new Array(); // 명시적 생성
+var array = [10, 20, 30, 40, "안상", true, function(){}, {}]; // 묵시적 생성
+console.log(array.length);
+array.push("밥먹고 합시다...");
+console.log(array.length);
+
+var i = 0;
+while (i < array.length) {
+	console.log(array[i]);
+	i++;
+}
+</script>
+</body>
+</html>

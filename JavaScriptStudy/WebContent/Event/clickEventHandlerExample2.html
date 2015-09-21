@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<title>이벤트 처리</title>
+<meta charset="utf-8">
+<script>
+window.onload = function () {
+	document.getElementById("confirmButton").onclick = function(){
+		selectFruit(document.theForm.fruit);
+	}
+}
+function selectFruit(select) {
+    alert(select.options[select.selectedIndex].value + "를(을) 선택했습니다.");
+}
+</script> 
+</head>
+<body>
+좋아하는 과일을 선택하세요.<br/>
+<form name="theForm">
+    <select name="fruit">
+        <option selected>사과</option>
+        <option>포도</option>
+        <option>메론</option>
+    </select>
+    <input type="button" value="확인" id="confirmButton">
+</form>
+</body>
+</html>

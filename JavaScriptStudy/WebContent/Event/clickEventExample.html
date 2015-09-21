@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<title>이벤트 처리</title>
+<meta charset="utf-8">
+<script>
+window.onload = function () {
+	var inputs = document.getElementsByTagName("input");
+	for(var i=0; i<inputs.length; i++){
+		inputs[i].onclick = function(){
+			selectFruit(this); // this는 이벤트소스
+		}		
+	}
+	
+	document.body.ondblclick = function(){
+		//document.body.style.backgroundColor = 'yellow';
+		this.style.backgroundColor = 'yellow';
+	};
+}
+
+function selectFruit(item) {
+    if (item.checked) {
+        alert(item.value + "를 선택했습니다.");
+    } else {
+        alert(item.value + "선택을 해제했습니다.");
+    }
+}
+</script> 
+</head>
+<body>
+좋아하는 과일을 선택하세요.<br/>
+<form name="theForm">
+    <input type="checkbox" name="apple" value="사과"> 사과<br/>
+    <input type="checkbox" name="grape" value="포도"> 포도<br/>
+    <input type="checkbox" name="melon" value="메론"> 메론<br/>
+</form>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+<title>폼 관련 스타일 속성들</title>
+<meta charset="utf-8" />
+<style type="text/css">
+body,table,tr,td,select,form,input,textarea {
+	font-family: 굴림;
+	font-size: 12px;
+	color: #003399;
+}
+
+body {
+	scrollbar-face-color: #DFEFFF; /*스크롤 이동탭 내부색*/
+	scrollbar-shadow-color: #6699FF; /*오른쪽,하단 테두리색*/
+	scrollbar-highlight-color: #66CCFF; /*왼쪽,상단 테두리색*/
+	scrollbar-3dlight-color: #ffffff; /*좌측,상단 바깥 테두리색*/
+	scrollbar-darkshadow-color: #ffffff; /*우측,하단 바깥 테두리색*/
+	scrollbar-track-color: #EEF7FF; /*스크롤바 내부색*/
+	scrollbar-arrow-color: #3399FF /*이동버튼 화살표색*/
+}
+
+table {
+	border-top: solid 5px #46BEFF;
+	border-bottom: solid 3px #46BEFF;
+	border-right: solid 1px #46BEFF;
+	border-collapse: collapse;
+	width: 500px;
+}
+
+th {
+	border: solid 1px #46BEFF;
+	background-color: A5D8FA;
+	color: white;
+	padding: 8px
+}
+
+td {
+	padding: 8px;
+	padding-left: 10px;
+	background-color: #E6F2FF
+}
+
+.td1 {
+	background-color: #E6F2FF
+}
+
+caption {
+	color: #FF6600;
+	font-size: 11pt;
+	font-weight: bold
+}
+
+.text_double {
+	border: 0px;
+	border-bottom: 3px double navy;
+	background-color: transparent;
+	text-align: center
+}
+
+.text_dashed {
+	border: 0px;
+	border-bottom: 1px dashed navy;
+	background-color: transparent;
+	text-align: center
+}
+
+.text_box {
+	border: 1px solid navy;
+	background-color: transparent;
+	text-align: center
+}
+
+.text_gray {
+	border: 1px solid gray;
+	background-color: transparent;
+	text-align: center
+}
+
+.button {
+	color: white;
+	background-color: #46BEFF;
+	border: solid 1 #CCFFFF;
+	height: 22px;
+	cursor: n-resize;
+}
+
+select {
+	color: #3399FF;
+	background-color: #EEF7FF;
+	width: 50px;
+	text-align: center;
+}
+
+textarea {
+	font-size: 11px;
+	text-align: center;
+	background-color: #CAE4FF;
+	border: solid 1 #6699FF;
+}
+</style>
+</head>
+<body scroll=no>
+	<form name=frm1>
+		<table align=center>
+			<tr>
+				<th colspan=2 height=50><font size=+1 color=#006699>회원
+						가입 폼</font></th>
+			</tr>
+			<tr>
+				<th>아이디</th>
+				<td><input type=text name=id size=20 maxlength=12
+					class=text_double style="ime-mode: active">&nbsp;&nbsp; <input
+					type=image src="images/check.gif" alt=중복검사 align=absmiddle>
+				</td>
+			</tr>
+			<tr class=td1>
+				<th>패스워드</th>
+				<td><input type=password name=pw size=20 maxlength=8
+					class=text_dashed></td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td><input type=radio name=sex value=1>남 <input
+					type=radio name=sex value=2 checked>여</td>
+			</tr>
+			<tr class=td1>
+				<th>국적</th>
+				<td><input type=text value=대한민국 readonly class=text_dashed>
+					<input type=button value=국적변경 disabled class=button></td>
+			</tr>
+
+			<tr>
+				<th>휴대폰</th>
+				<td><select name=phone1>
+						<option value=1 SELECTED>011</option>
+						<option value=2>016</option>
+						<option value=3>017</option>
+						<option value=4>018</option>
+						<option value=5>019</option>
+				</select> - <input type=text name=phone2 size=6 maxlength=4 class=text_box>
+					- <input type=text name=phone3 size=6 maxlength=4 class=text_box>
+				</td>
+			</tr>
+
+			<tr class=td1>
+				<th>가족사항</th>
+				<td><input type=checkbox name=familly1 value=1>조부모 <input
+					type=checkbox name=familly2 value=2 checked>부모 <input
+					type=checkbox name=familly3 value=3>형제자매 <input
+					type=checkbox name=familly4 value=4>배우자 <input
+					type=checkbox name=familly5 value=5>자식</td>
+			</tr>
+			<tr>
+				<th>소개글</th>
+				<td><textarea cols=60 rows=5 name=memo>관심분야에 대해 쓰세요
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+		</textarea></td>
+			</tr>
+
+			<tr class=td1>
+				<th>증명사진</th>
+				<td><input type=file size=50 class=text_gray></td>
+			</tr>
+			<tr>
+				<th bgcolor=#ececec colspan=2 align=center><input type=submit
+					value=가입하기 class=button> <input type=reset value=다시작성
+					class=button></th>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

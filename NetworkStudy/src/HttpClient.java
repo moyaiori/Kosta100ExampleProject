@@ -110,14 +110,15 @@ public class HttpClient {
 	}
 	
 	public static void main(String[] args) throws UnknownHostException {
-		HttpClient httpClient = new HttpClient(InetAddress.getByName("www.naver.com"), 80);
+//		HttpClient httpClient = new HttpClient(InetAddress.getByName("www.naver.com"), 80);
+		HttpClient httpClient = new HttpClient(InetAddress.getByName("localhost"), 80);
 //		HttpClient httpClient = new HttpClient(InetAddress.getByName("www.google.com"), 80);
 		try {
 			httpClient.connect();
 			System.out.println("WebServer["+httpClient.getPort()+"] Connected.....");
 
 			// HTTP 프로토콜에 맞게 데이터 송수신
-			String requestMessage = "GET /index.html HTTP/1.0\r\n" + // 요청라인
+			String requestMessage = "GET /servlet/gugudan HTTP/1.0\r\n" + // 요청라인
 									"someName1:someValue\r\n" + 
 									"someName2:someValue\r\n" + 
 									"someName3:someValue\r\n" + 

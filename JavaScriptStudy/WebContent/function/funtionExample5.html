@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>클로저(Closure)</title>
+
+<script type="text/javascript">
+function count(){
+	var i = 0;
+	// 클로저
+	function increment(){
+		i++;
+		return i;
+	}
+	return increment;
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+	var closure = count();
+	var cnt = closure();
+	cnt = closure();
+	cnt = closure();
+	document.write("카운트 : " + cnt);
+</script>
+
+</body>
+</html>

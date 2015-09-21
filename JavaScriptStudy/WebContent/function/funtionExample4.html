@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<script type="text/javascript">
+function callTenTimes(callback){
+	for(var i=0; i<10; i++){
+		callback();		
+	}
+}
+</script>
+
+</head>
+<body>
+<script type="text/javascript">
+var call = function(){
+	console.log("화요일입니다..");
+}
+//callTenTimes(call);
+callTenTimes(function(){
+	console.log("화요일입니다..");
+});
+
+</script>
+
+</body>
+</html>

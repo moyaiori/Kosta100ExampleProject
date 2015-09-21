@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>내장함수</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+setTimeout(function(){
+	alert("실행됨...");
+}, 3000);
+*/
+var id = setInterval(function(){
+	//console.log("주기적 실행 코드");
+	var today = new Date();
+	today = today.toLocaleString();
+	//document.write(today);
+	// 나중에 배우기 DOM 처리
+	document.body.innerHTML = today;
+	
+	
+}, 1000);
+
+setTimeout(function(){
+	clearInterval(id);
+}, 20000);
+
+</script>
+
+</body>
+</html>

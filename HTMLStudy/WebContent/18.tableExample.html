@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<title>테이블 관련 스타일 속성들</title>
+<meta charset="utf-8" />
+<style type="text/css">
+table {
+	border: solid 1px orange;
+	border-collapse: collapse;
+	width: 400px;
+	text-align: center;
+	position: relative;
+	left: 10%
+}
+
+th {
+	border: dotted 1px orange;
+	background-color: #FFCC66;
+	color: white;
+	padding: 10px
+}
+
+td {
+	border: dotted 1px orange;
+	padding: 10px
+}
+
+caption {
+	color: #FF6600;
+	font-size: 11pt;
+	font-weight: bold
+}
+</style>
+</head>
+<body>
+	<table>
+		<caption>셀 안쪽 선만 점선으로</caption>
+		<tr>
+			<th>순번</th>
+			<th>이름</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>니키</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>주노</td>
+		</tr>
+	</table>
+</body>
+</html>

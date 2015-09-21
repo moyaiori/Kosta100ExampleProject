@@ -1,0 +1,9 @@
+@CHARSET "utf-8";
+h2 {
+	color:blue;
+	font-size: 40pt;
+}
+
+body {
+	font-family: 궁서, 바탕, 나눔고딕;
+}

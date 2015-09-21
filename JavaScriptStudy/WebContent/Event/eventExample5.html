@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>익스플로러 & 표준 이벤트 모델</title>
+
+<script type="text/javascript">
+// window load 이벤트 처리
+window.onload = function (){
+	var eventSource = document.getElementById("button");
+	eventSource.addEventListener("click", function(){
+		alert("익스플로러");
+	});
+	
+	eventSource.addEventListener("click", function(){
+		alert("오늘 수업 끝");
+	});
+	
+	// 이벤트 제거
+	//eventSource.removeEventListener("click", "eventName")
+}
+
+</script>
+
+</head>
+<body>
+
+<h2 id="button">클릭</h2>
+
+테스트 내용입니다.
+
+</body>
+</html>

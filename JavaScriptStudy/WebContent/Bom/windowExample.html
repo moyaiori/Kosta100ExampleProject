@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window 객체</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var child = window.open("", "", "width = 200, height = 200");
+
+child.moveTo(220, 50);
+
+var timerID = setInterval(function () {
+	child.moveBy(5, 5);
+	child.resizeBy(10, 10);
+}, 100);
+
+setTimeout(function (){
+	clearInterval(timerID);
+}, 3000);
+</script>
+
+</body>
+</html>

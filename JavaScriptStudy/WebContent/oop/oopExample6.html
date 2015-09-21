@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+</head>
+<body>
+<script type="text/javascript">
+//생성자 함수를 선언합니다.
+function Rectangle(width, height){
+	// 변수를 선언합니다.
+	this.width = width;
+	this.height = height;
+}
+
+Rectangle.prototype.getArea = function(){
+	return this.width * this.height;
+};
+
+function Square(length){
+	// 생성자 상속
+	this.base = Rectangle;
+	this.base(length, length);
+}
+
+// 프로토타입 상속
+Square.prototype = Rectangle.prototype;
+Square.constructor = Square;
+
+var square = new Square(200);
+console.log(square.getArea());
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

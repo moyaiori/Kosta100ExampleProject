@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+var object = new Object(); // 명시적 생성
+var object = {
+	property : 273			
+}; // 묵시적 생성
+
+console.log(object.hasOwnProperty("property"));
+console.log(object.hasOwnProperty("toString"));
+console.log(object.hasOwnProperty("constructor"));
+console.log(object.propertyIsEnumerable("property"));
+console.log(object.toString());
+console.log(object.toLocaleString());
+console.log(object.valueOf());
+
+console.log(object.constructor);
+console.log(typeof object.constructor);
+var someObject = object.constructor();
+console.log(someObject);
+
+for ( var key in object) {
+	console.log(object[key]);	
+}
+
+// 구체적인 객체의 타입 비교
+var obj1 = new String("aaa");
+var obj2 = new Number(10);
+
+console.log(typeof obj1);
+console.log(typeof obj2);
+
+console.log(obj1.constructor);
+console.log(obj2.constructor);
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

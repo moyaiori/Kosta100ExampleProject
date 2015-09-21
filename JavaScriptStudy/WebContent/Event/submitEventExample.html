@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<title>이벤트 처리</title>
+<meta charset="utf-8">
+<script>
+window.onload = function () {
+	console.log(document.myForm.name);
+	console.log(document.myForm.action);
+	console.log(document.myForm.method);
+	
+	document.myForm.onsubmit = function () {
+	    
+		//var name = document.myForm.name.value;
+		var name = document.forms[0].elements[0].value;	// 동적으로 폼태그 안의 속성들 가져오기
+		if(name == null || name.length == 0){
+			alert('이름을 입력하여 주세요.');
+			return false; // 디폴트 이벤트핸들러 제거
+		}
+		return true;
+		//document.myForm.submit();	        
+	};
+};
+</script> 
+</head>
+<body>
+<form name="myForm" action="서버프로그램">
+  이름 <input type="text" name="name" /><br>
+  <input type="submit" value="제출"/>
+</form>
+</body>
+</html>

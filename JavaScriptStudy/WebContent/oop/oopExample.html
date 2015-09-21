@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 지향 프로그래밍</title>
+</head>
+<body>
+
+<script type="text/javascript">
+// 일상생활의 객체를 표현
+var product = {
+		name : "7D 건조 망고 ",
+		type : "당절임",
+		price : 1000,
+		toString : function(){
+			return this.name + ", " + this.type + ", " + this.price;
+		}
+}
+
+console.log(product.name);
+console.log(product["type"]);
+console.log(product.toString());
+
+for ( var key in product) {
+	console.log("key : " + key + ", value : " + product[key] + ", type : " + typeof product[key]);
+}
+
+/*
+for ( var key in window) {
+	console.log(key + " : " + window[key]);
+}
+*/
+
+console.log("price" in product);
+
+// 객체에 속성 족덩 추가
+product.describe = "제품의 상세정보입니다.";
+product.print = function(){
+	console.log("출력 메소드 입니다.");
+}
+
+console.log(product.describe);
+product.print();
+
+// 객체 속성 제거
+delete (product.describe);
+console.log(product.describe);
+
+</script>
+</body>
+</html>

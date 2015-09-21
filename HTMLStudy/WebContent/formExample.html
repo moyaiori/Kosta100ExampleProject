@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼 엘리먼트들....</title>
+</head>
+<body>
+<form action="서버쪽의 프로그램이름" method="get">
+	<label>아이디 : <input type="text" name="name" size="20" maxlength="8" placeholder="아이디를 입력하세요""></label><br>
+	<label>비밀번호 : <input type="password" name="name" size="20" maxlength="8" placeholder="비밀번호를 입력하세요"></label><br>
+	<label>취미 : </label>
+	<label>스포츠<input type="checkbox" name="hobby" value="sports"></label>
+	<label>독서<input type="checkbox" name="hobby" value="reading"></label>
+	<label>게임<input type="checkbox" name="hobby" value="game"></label>
+	<label>공부<input type="checkbox" name="hobby"value="study"></label><br>
+	
+	<label>성별 : </label>
+	<label>여자<input type="radio" name="gendor" value="f"></label>
+	<label>남자<input type="radio" name="gendor" value="m"></label><br>
+	
+  	<label>파일 : <input type="file" name="upload" size="10" maxlength="8"></label><br>
+  	<input type="image" name="img" src="images/tomcat.png"><br>
+  	
+  	<label>좋아하는 연예인 : </label>
+  	<select name="star" multiple="multiple">
+  		<option value="0">박하선</option>
+  		<option value="1">아이유</option>
+  		<option value="2">수지</option>
+  		<option value="3">박보영</option>
+  	</select><br>
+  	
+  	<label>자기소개 : </label>
+  	<textarea rows="5" cols="50" placeholder="여기에 입력하세요"></textarea>
+  	
+	
+	<input type="hidden" name="some" value="someValue">
+	
+	<button name="myButton" type="submit">전송(서브밋)</button>
+	<button name="myButton" type="reset">리셋</button>
+	
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	type : date<input type="date" name="name" size="20" maxlength="5"><br>
+	<button name="myButton">전송(버튼)</button>
+</form>
+</body>
+</html>

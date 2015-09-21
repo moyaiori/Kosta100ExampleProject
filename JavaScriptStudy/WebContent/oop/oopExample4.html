@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+</head>
+<body>
+<script type="text/javascript">
+// 생성자 함수(일상생활의 객체를 추상화)
+function Student(name, korean, math, english, science){
+	this.name = name;
+	this.korean = korean;
+	this.math = math;
+	this.english = english;
+	this.science = science;
+}
+
+// 프로토 타입 객체에 Student 인스턴스(객체)
+// 메소드 정의
+Student.prototype.getSum = function(){
+	return this.korean + this.math + this.english + this.science;
+};
+
+Student.prototype.getAverage = function(){
+	return this.getSum() / 4;
+};
+
+Student.prototype.toString = function(){
+	return this.name + '\t' + this.getSum() + '\t' + this.getAverage();
+};
+
+var student1 = new Student("이광용", 80, 75, 70, 60);
+
+console.log(student1.getSum());
+
+console.log(student1.constructor);
+console.log(typeof student1.constructor);
+console.log(Student.prototype.constructor);
+
+</script>
+</body>
+</html>

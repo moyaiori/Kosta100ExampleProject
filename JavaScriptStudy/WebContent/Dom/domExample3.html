@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체</title>
+
+<script type="text/javascript">
+window.onload = function(){
+	var images = [];
+	
+	for (var i = 0; i < 10; i++) {
+		images.push("../images/icons466" + i +".png");
+		var imgE = document.createElement("img");
+		imgE.setAttribute("src", images[i]);
+		imgE.setAttribute("wdith", "200");
+		imgE.setAttribute("height", "200");
+		document.body.appendChild(imgE);
+	}
+}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

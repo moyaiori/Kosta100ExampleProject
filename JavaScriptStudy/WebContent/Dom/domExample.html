@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM 개념 이해</title>
+
+<script type="text/javascript">
+
+window.onload = function(){
+
+	var htmlE = document.documentElement;
+	console.log(htmlE.constructor);
+	console.log(htmlE.nodeValue);
+	console.log(htmlE.nodeType);
+	console.log(htmlE.nodeName);
+
+	var element = document.getElementById("title");
+	console.log(element.childNodes[0].nodeValue);
+	console.log(element.childNodes[0].nodeType);
+	console.log(element.childNodes[0].nodeName);
+	
+	console.log(Node.ELEMENT_NODE);
+	console.log(Node.ATTRIBUTE_NODE);
+	console.log(Node.DOCUMENT_NODE);
+	console.log(Node.TEXT_NODE);
+	
+	
+	log("잘해봅시다");
+}
+// 로그출력
+function log(message){
+	var logE = document.getElementById("logBox");
+	logE.innerHTML = message;
+}
+</script>
+
+</head>
+<body>
+
+<h2 id="title">DOM 개념 이해</h2>
+<p>오늘 수업은 요기까지</p>
+
+<div id="logBox" style="border: 2px solid blue; background-color: yellow;" ></div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

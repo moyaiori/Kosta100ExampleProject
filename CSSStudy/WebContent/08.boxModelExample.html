@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<title>박스 모델과 마진과 패딩 속성</title>
+<meta charset="utf-8">
+<style type="text/css">
+body {
+	text-align: center;
+}
+
+#content {
+	width: 500px;
+	padding: 1em;
+	margin: 0px auto;
+	border: 1px solid #999;
+	line-height: 1.5em;
+	text-align: left;
+}
+
+ul {
+	background: green;
+	margin: 12px 12px 12px 12px;
+	padding: 3px 3px 3px 3px;
+	border: 2px solid red;
+}
+
+li {
+	color: black;
+	background-color: gray;
+	margin: 10px;
+	list-style: none;
+}
+
+li.withborder {
+	border: 1px dashed orange;
+}
+</style>
+</head>
+<body>
+	<h2>박스(컨테이너) 모델과 마진과 패딩 설정</h2>
+
+	<div id="content">
+		박스(span, p, div, ul, ol, table, form 등)를 중앙에 위치하기<br/>
+		<ul>
+			<li>HTML에 CSS 적용하기
+			<li class="withborder">HTML 문서 전체의 통일성과 일관된 스타일 지정
+			<li class="withborder">HTML 문서 전체의 통일성과 일관된 스타일 지정
+			<li class="withborder">HTML 문서 전체의 통일성과 일관된 스타일 지정
+			<li class="withborder">HTML 문서 전체의 통일성과 일관된 스타일 지정
+		</ul>
+	</div>
+</body>
+</html>

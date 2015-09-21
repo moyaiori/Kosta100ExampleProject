@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<title>테이블 관련 스타일 속성들</title>
+<meta charset="utf-8" />
+<style type="text/css">
+table {
+	border: solid 1px orange;
+	border-collapse: collapse;
+	width: 400px;
+	text-align: center;
+	position: relative;
+	left: 10%
+}
+
+th {
+	border: solid 1px orange;
+	background-color: #FFCC66;
+	color: white;
+	padding: 10px
+}
+
+td {
+	border: solid 1px orange;
+	padding: 10px
+}
+
+.tl {
+	border-left: solid 3px orange;
+}
+
+.tb {
+	border-bottom: solid 3px orange;
+}
+
+caption {
+	color: #FF6600;
+	font-size: 11pt;
+	font-weight: bold
+}
+</style>
+</head>
+<body>
+<table>
+  <caption>가운데 선을 두껍게</caption>
+  <tr><th class=tb>순번</th><th class=tb style="border-left:solid 3px orange;">이름</th></tr>
+  <tr><td>1</td><td class=tl>니키</td></tr>
+  <tr><td>2</td><td class=tl>주노</td></tr>
+</table>
+
+</body>
+</html> 

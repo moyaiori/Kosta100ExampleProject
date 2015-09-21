@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서객체 제거</title>
+
+<script type="text/javascript">
+window.onload = function(){
+	var childs = document.body.childNodes;
+	// 공백을 다 가져옴
+	for (var i = 0; i < childs.length; i++) {
+		var node = childs[i];
+		// 공백제외한 엘리먼츠만
+		if (node.nodeType == Node.ELEMENT_NODE) {
+			node.style.color = "#ff00ff";
+		}
+	}
+}
+
+</script>
+
+</head>
+<body>
+<h1 id="title">타이블1</h1>
+<p>문단내용입니다.</p>
+<hr>
+<ul>
+	<li>11</li>
+	<li>22</li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

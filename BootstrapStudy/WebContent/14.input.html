@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Input Example</title>
+</head>
+<body>
+	
+	<!-- text, password -->
+	<!-- form-control과 함께 input-lg, input-sm으로 높이 조절가능 -->
+	<!-- form-group에서 사용하면 아래 아이들 한번에 조절 가능 -->
+<div class="container col-md-4 col-md-offset-4">	
+	<div class="form-group">
+  		<label>Name:</label>
+  		<input type="text" class="form-control" placeholder="Email">
+	</div>
+	<div class="form-group">
+  		<label>Password:</label>
+	    <input type="password" class="form-control" placeholder="Enter password">
+	</div>
+
+​	<!-- textarea -->
+	<div class="form-group">
+		<textarea class=form-control></textarea>
+	</div>
+
+​
+	<!-- checkbox -->
+	<div class="checkbox">
+		<label><input type="checkbox">고구마</label>
+		<label><input type="checkbox">호박</label>
+		<label><input type="checkbox">사과</label>
+	</div>
+	  
+	<!-- checkbox를 inline으로 표기 -->
+	<div class="checkbox">
+		<label class="checkbox-inline"><input type="checkbox">고구마</label>
+		<label class="checkbox-inline"><input type="checkbox">호박</label>
+		<label class="checkbox-inline"><input type="checkbox">사과</label>
+	</div>
+	
+	<!--​ radio button -->
+	<div class="radio">
+		<label class="radio-inline"><input type="radio" name="고구마">고구마</label>
+		<label class="radio-inline"><input type="radio" name="호박">호박</label>
+		<label class="radio-inline"><input type="radio" name="사과">사과</label>
+	</div>
+	 
+	<!-- Select List -->
+	<select class="form-control">
+		<option>이광용</option>
+		<option>이광용</option>
+		<option>이광용</option>
+		<option>이광용</option>	
+	</select>
+
+</div>
+
+</body>
+</html>

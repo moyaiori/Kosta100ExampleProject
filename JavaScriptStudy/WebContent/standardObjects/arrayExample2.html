@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>배열(Array)객체 함수</title>
+<script type="text/javascript" src="../js/Student.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+/*
+var array = [33, 66, 11, 22, 55, 44, 77];
+var kor = ["라","나","가","다"];
+
+console.log(array);
+array.sort();
+console.log(array);
+
+console.log(kor);
+kor.sort();
+console.log(kor);
+*/
+
+
+
+
+
+var students = [];
+students.push(new Student("이광용", 80, 90, 50, 60));
+students.push(new Student("루디", 10, 30, 20, 80));
+students.push(new Student("제이브", 40, 50, 80, 40));
+
+students.sort(function (x, y){
+	return y.getSum() - x.getSum();
+});
+
+for ( var i in students) {
+	console.log(students[i].toString());
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+

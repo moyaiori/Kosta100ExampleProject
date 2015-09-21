@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 생성</title>
+
+<script type="text/javascript">
+window.onload = function(){
+	var array = document.getElementsByTagName("h1");
+	
+	for (var i = 0; i < array.length; i++) {
+		console.log(array[i].firstChild.nodeValue);
+		array[i].innerHTML = "참돔 먹고싶다.";
+	}
+}
+</script>
+
+</head>
+<body>
+
+<h1>타이블1</h1>
+<h1>타이블2</h1>
+<h1>타이블3</h1>
+<h1>타이블4</h1>
+<h1>타이블5</h1>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

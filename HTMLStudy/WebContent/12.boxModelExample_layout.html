@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<title>float 속성을 이용한 페이지 레이아웃</title>
+<meta charset="utf-8" />
+<style type="text/css">
+* {margin:0px; padding:0px; border-width:0px}
+body {
+	font-family: Century Gothic, Gill Sans, Arial, Serif;
+}
+
+#topMenu {
+	height: 100px;
+	margin-bottom: 10px;
+	border: 1px solid #833734;
+	background: #AFAFAF;
+	color:#FFFFFF
+}
+
+#sideMenu {
+	width: 180px;
+	height: 400px;
+	border: 1px solid #833734;
+	background: #DFDFDF;
+	float: left;
+}
+
+#contents {
+	height: 400px;
+	border: 1px dotted #833734;
+}
+
+#footer {
+	height: 50px;
+	border: 1px dotted #833734;
+	background: #DFDFDF;
+	margin-top: 10px;
+}
+</style>
+</head>
+<body>
+	<div style="margin:10px 10px;">
+		<div id="topMenu">TopMenu</div>
+		<div id="sideMenu">SideMenu</div>
+		<div id="contents">Contents</div>
+		<div id="footer">Footer</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+<script type="text/javascript" src="../js/Student.js"></script>
+</head>
+
+
+<body>
+<script type="text/javascript">
+
+//var students = new Array(); // 명시적 생성
+var students = []; 			  // 묵시적 생성
+
+students.push(new Student("이광용", 80, 70, 75, 95));
+students.push(new Student("유안상", 70, 80, 85, 55));
+students.push(new Student("김성훈", 90, 75, 95, 75));
+
+// 전체정보 출력
+for (var i in students) {
+	var student = students[i];
+	console.log(student);
+}
+
+</script>
+</body>
+</html>

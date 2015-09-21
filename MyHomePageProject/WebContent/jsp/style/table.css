@@ -1,0 +1,866 @@
+
+@charset "utf-8";
+col.left {
+    text-align: left !important;
+}
+col.right {
+    text-align: right !important;
+}
+table.fixed {
+    table-layout: fixed;
+}
+table.fixed th, table.fixed td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#mainEduList th, #mainEduList td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+table td.noData, table th.noData {
+    text-align: center;
+}
+div.grid01 {
+    width: 100%;
+}
+div.grid01 table {
+    border-collapse: collapse;
+    font: 12px Dotum,sans-serif;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+    text-align: center;
+    width: 100%;
+}
+div.grid01 table th, div.grid01 table td {
+    border-bottom: 1px solid #ededed;
+    font: 12px Dotum,sans-serif;
+    overflow: hidden;
+    padding: 0.6em;
+    text-overflow: ellipsis;
+    vertical-align: 4px;
+    white-space: nowrap;
+}
+/* syhan 추가 */
+div.grid01_1 table th, div.grid01_1 table td {
+    border: 1px solid !important;
+    font: 12px Dotum,sans-serif;
+    overflow: hidden;
+    padding: 0.6em;
+    text-overflow: ellipsis;
+    vertical-align: 4px;
+    white-space: nowrap;
+}
+div.grid01 table th {
+    border-bottom: 1px solid #ededed;
+    font: 12px Dotum,sans-serif;
+    overflow: hidden;
+    padding: 0.6em;
+    text-overflow: ellipsis;
+    vertical-align: 4px;
+    white-space: nowrap;
+    
+}
+div.grid01 table thead th, div.grid01 table thead td, div.grid01 table tfoot th, div.grid01 table tfoot td {
+    background-color: #f5f6f6;
+    color: #444;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+div.grid01 table thead th {
+    letter-spacing: -1px;
+}
+div.grid01 table thead td {
+    background: url("../img/grid01_pix1.gif") no-repeat scroll 0 100% #E5EFF1;
+}
+div.grid01 table thead th, div.grid01 table thead td {
+    border-top: 2px solid #606a6e;
+    border-bottom: 1px solid #9a9fa1;
+}
+
+/** added by Teo : Start **/
+div.grid01 table thead th.thin, div.grid01 table thead td.thin {
+    border-top: 1px solid #d0d7d9;
+}
+
+div.scrollGrid {
+    height: 150px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-bottom:1px solid #e4e4e4;
+}
+div.scrollGridHidden {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-bottom:1px solid #e4e4e4;
+}
+div.scrollGridBoth {
+    height: 150px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    border-bottom:1px solid #e4e4e4;
+}
+th div.plus, td div.plus {
+    width: 14px;
+    height: 14px;
+    background: url("../img/ico_open.gif") no-repeat 0 0;
+    float: left;
+    margin-right: 7px;
+    cursor: pointer;
+}
+th div.plus2, td div.plus2 {
+    width: 14px;
+    height: 14px;
+    background: url("../img/ico_open.gif") no-repeat 0 0;
+    float: left;
+    margin-right: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+th div.minus, td div.minus {
+    width: 14px;
+    height: 14px;
+    background: url("../img/ico_open.gif") no-repeat 0 -14px;
+    float: left;
+    margin-right: 7px;
+    cursor: pointer;
+}
+th div.minus2, td div.minus2 {
+    width: 14px;
+    height: 14px;
+    background: url("../img/ico_open.gif") no-repeat 0 -14px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+td div.skill {
+    width: 14px;
+    height: 14px;
+    background: url("../img/ico_doc.gif") no-repeat 0 0;
+    float: left;
+    margin: 0 7px 0 20px;
+}
+td div.treeNode {
+    width: 14px;
+    height: 14px;
+    background: url("../img/ico_doc.gif") no-repeat 0 0;
+    float: left;
+    margin: 0 7px 0 0px;
+}
+
+
+/** treeVeiw */
+div.treeView > ul {
+    margin: 5x 0 20px 0;
+    font: 13px Dotum,sans-serif;
+    border: 1px solid #e4e4e4;
+    
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-bottom:1px solid #e4e4e4;
+}
+
+div.treeView > ul > li {
+    margin-left: 10px;
+    margin-top:5px;
+}
+
+div.treeView > ul > li > div.plus {
+    width: 14px;
+    height: 14px;
+    background: url("../img/ico_open.gif") no-repeat 0 0;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+div.treeView > ul > li > div.minus {
+    width: 14px;
+    height: 14px;
+    background: url("../img/ico_open.gif") no-repeat 0 -14px;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+div.treeView > ul > li > ul > li {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+div.treeView > ul > li > ul > li > div.plus {
+    width: 14px;
+    height: 14px;
+    background: url("../img/ico_open.gif") no-repeat 0 0;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+div.treeView > ul > li > ul > li > div.minus {
+    width: 14px;
+    height: 14px;
+    background: url("../img/ico_open.gif") no-repeat 0 -14px;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+div.treeView > ul > li > ul > li > ul > li {
+    margin-left: 20px;
+    margin-top: 5px;
+    width:360px;
+    
+    text-overflow:ellipsis; 
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+div.treeView > ul > li > ul > li > ul > li > div.node {
+    width: 14px;
+    height: 14px;
+    background: url("../img/ico_doc.gif") no-repeat 0 0;
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+/** added by Teo : End **/
+
+div.grid01 table tbody td {
+    color: #666666;
+}
+div.grid01 table tbody td {
+    color: #666666;
+}
+div.grid01 table tbody tr th, div.grid01 table tbody td {
+    background-color: #FFFFFF;
+    color: #5A646C;    
+}
+/*테이블 초과를 막아주는 ... 용 DIV*/
+div.grid01 table tbody tr th div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+div.grid01 table tbody tr td div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+div.grid01 table tbody tr:hover td, div.grid01 table tbody tr:hover th {
+    background-color: #F4F4F4;
+}
+div.grid01 table tbody td.nodata, div.grid01 table tbody th.nodata {
+    text-align: center;
+}
+div.grid01 table tbody th *, div.grid01 table tbody td * {
+    vertical-align: middle;
+}
+div.grid01 table tbody th.tddate, div.grid01 table tbody td.tddate {
+    font: 10px verdana;
+    letter-spacing: -1px;
+}
+div.grid01 table tbody th.tdmoney, div.grid01 table tbody td.tdmoney {
+    font: 10px verdana;
+    letter-spacing: -1px;
+    text-align: right;
+}
+div.grid01 table tr.unRead * {
+    color: #666666;
+    font-weight: bold;
+}
+div.grid01 table tr.unRead a {
+    color: #028BCB;
+    cursor: pointer;
+    text-decoration: none;
+}
+div.grid01 table thead th {
+    text-align: center !important;
+}
+div.grid01 table tfoot th, div.grid01 table tfoot td {
+    background-color: #FFFFFF;
+    color: #434343;
+}
+div.grid01 table tfoot th {
+    background-color: #EEEEEE;
+    color: #000000;
+}
+div.grid01 table tr.foot th, div.grid01 table tr.foot td {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #434343;
+}
+div.grid01 table tr.foot th {
+    background: none repeat scroll 0 0 #EEEEEE;
+    color: #000000;
+}
+div.grid01 table col.left, div.grid01 table tbody th.left, div.grid01 table tbody td.left {
+    text-align: left;
+}
+
+/** added by Teo : Start **/
+div.grid01 table thead th.leftLine, div.grid01 table thead td.leftLine {
+    border-left: 1px solid #d0d7d9;
+}
+
+div.grid01 table thead th.rightLine, div.grid01 table thead td.rightLine {
+    border-right: 1px solid #d0d7d9;
+}
+
+div.grid01 table thead th.bothLine, div.grid01 table thead td.bothLine {
+    border-left: 1px solid #d0d7d9;
+    border-right: 1px solid #d0d7d9;
+}
+
+div.grid01 table tbody td.leftLine {
+    border-left: 1px solid #ededed;
+}
+
+div.grid01 table tbody td.rightLine {
+    border-right: 1px solid #ededed;
+}
+
+div.grid01 table tbody td.bothLine {
+    border-left: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+}
+
+/** added by Teo : End **/
+
+
+div.grid07 {
+    width: 100%;
+}
+div.grid07 table {
+    border-collapse: collapse;
+    font: 12px Dotum,sans-serif;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+    text-align: center;
+    width: 100%;
+}
+div.grid07 table th, div.grid07 table td {
+    border-bottom: 1px solid #D5D5D5;
+    border-top: 1px solid #D5D5D5;
+    font: 12px Dotum,sans-serif;
+    overflow: hidden;
+    padding: 0.6em;
+    text-overflow: ellipsis;
+    vertical-align: 4px;
+}
+div.grid07 table thead th, div.grid07 table thead td, div.grid07 table tfoot th, div.grid07 table tfoot td {
+    background-color: #f5f6f6;
+    color: #434343;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+div.grid07 table thead th {
+    letter-spacing: -1px;
+}
+div.grid07 table thead td {
+    background: url("../img/grid01_pix1.gif") no-repeat scroll 0 100% #E5EFF1;
+}
+div.grid07 table thead th, div.grid07 table thead td {
+    border-top: 2px solid #606a6e;
+}
+div.grid07 table tbody td {
+    background: url("../img/grid01_pix1.gif") no-repeat scroll 0 50% white;
+    color: #666666;
+    line-height: 150%;
+}
+div.grid07 table tbody th, div.grid07 table tbody td {
+    background-color: #FFFFFF;
+    color: #434343;
+}
+div.grid07 table tbody tr:hover td, div.grid07 table tbody tr:hover th {
+    background-color: #F4F4F4;
+}
+div.grid07 table tbody td.nodata, div.grid07 table tbody th.nodata {
+    text-align: center;
+}
+div.grid07 table tbody th *, div.grid07 table tbody td * {
+    vertical-align: middle;
+}
+div.grid07 table tbody th.tddate, div.grid07 table tbody td.tddate {
+    font: 10px verdana;
+    letter-spacing: -1px;
+}
+div.grid07 table tbody th.tdmoney, div.grid07 table tbody td.tdmoney {
+    font: 10px verdana;
+    letter-spacing: -1px;
+    text-align: right;
+}
+div.grid07 table tr.unRead * {
+    color: #666666;
+    font-weight: bold;
+}
+div.grid07 table tr.unRead a {
+    color: #028BCB;
+    cursor: pointer;
+    text-decoration: none;
+}
+div.grid07 table thead th {
+    text-align: center !important;
+}
+div.grid07 table tfoot th, div.grid07 table tfoot td {
+    background-color: #FFFFFF;
+    color: #434343;
+}
+div.grid07 table tfoot th {
+    background-color: #EEEEEE;
+    color: #000000;
+}
+div.grid07 table tr.foot th, div.grid07 table tr.foot td {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #434343;
+}
+div.grid07 table tr.foot th {
+    background: none repeat scroll 0 0 #EEEEEE;
+    color: #000000;
+}
+div.grid07 table col.left, div.grid07 table tbody th.left, div.grid07 table tbody td.left {
+    text-align: left;
+}
+div.grid07 table table {
+    border: 0 none;
+    padding: 0;
+}
+div.grid07 table table th {
+    border: 0 none;
+    padding: 0 10px 0 0;
+}
+div.grid01 table tbody tr:hover td.table01, div.grid01 table tbody tr:hover th.table01 {
+    background-color: #FFFFFF;
+}
+div.grid01 table tbody th.table01, div.grid01 table tbody td.table01 {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+div.grid01 table tbody th.table01 {
+    border-top: 0 none;
+    padding-left: 1px;
+    width: 776px;
+}
+* + html div.grid01 table tbody th.table01, * html div.grid01 table tbody th.table01 {
+    padding: 0;
+}
+div.grid01 table tbody th.table01 table {
+    border-collapse: collapse;
+    border-top-width: 0 !important;
+    font: 12px Dotum,sans-serif;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+    text-align: center;
+    width: 100%;
+}
+div.grid01 table tbody th.table01 table caption {
+    height: 24px;
+    margin-top: 4px;
+    text-align: left;
+}
+div.grid01 table tbody th.table01 table caption * {
+    vertical-align: middle;
+}
+div.grid01 table tbody th.table01 table th, div.grid01 table tbody th.table01 table td {
+    border: 1px solid #CCCCCC;
+    font: 12px Dotum,sans-serif;
+    height: 24px;
+    padding: 3px;
+}
+div.grid01 table tbody th.table01 table th {
+    background: none repeat scroll 0 0 #EBEBEB;
+    vertical-align: middle;
+}
+div.grid01 table tbody th.table01 table td {
+    background: none repeat scroll 0 0 transparent;
+    line-height: 1.6em;
+    text-align: justify;
+    vertical-align: middle;
+}
+div.grid01 table tbody th.table01 table td * {
+    vertical-align: middle;
+}
+div.grid01 table tbody th.table01 table td table {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+div.grid01 table tbody th.table01 table td table th, div.grid01 table tbody th.table01 table td table td {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+div.grid01 table tbody th.table01 table tbody th.thmodi {
+    background-color: #BAFF00;
+}
+div.grid01 table tbody th.table01 table td.rnum {
+    font: 11px verdana;
+    text-align: right !important;
+}
+div.grid01 table tbody th.table01 table td.ctxt {
+    text-align: center !important;
+}
+div.grid01 table tbody tr.sum th, div.grid01 table tbody tr.sum td {
+    border-bottom:1px solid #9a9fa1;
+    background-color:#f5f6f6;
+    font-weight:bold;
+}
+div.grid07 table tbody tr:hover td.table01, div.grid07 table tbody tr:hover th.table01 {
+    background-color: #FFFFFF;
+}
+div.grid07 table tbody th.table01, div.grid07 table tbody td.table01 {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+div.grid07 table tbody th.table01 {
+    border-top: 0 none;
+    padding-left: 1px;
+    width: 776px;
+}
+* + html div.grid07 table tbody th.table01, * html div.grid07 table tbody th.table01 {
+    padding: 0;
+}
+div.grid07 table tbody th.table01 table {
+    border-collapse: collapse;
+    border-top-width: 0 !important;
+    font: 12px Dotum,sans-serif;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+    text-align: center;
+    width: 100%;
+}
+div.grid07 table tbody th.table01 table caption {
+    height: 24px;
+    margin-top: 4px;
+    text-align: left;
+}
+div.grid07 table tbody th.table01 table caption * {
+    vertical-align: middle;
+}
+div.grid07 table tbody th.table01 table th, div.grid07 table tbody th.table01 table td {
+    border: 1px solid #CCCCCC;
+    font: 12px Dotum,sans-serif;
+    height: 24px;
+    padding: 3px;
+}
+div.grid07 table tbody th.table01 table th {
+    background: none repeat scroll 0 0 #EBEBEB;
+    vertical-align: middle;
+}
+div.grid07 table tbody th.table01 table td {
+    background: none repeat scroll 0 0 transparent;
+    line-height: 1.6em;
+    text-align: justify;
+    vertical-align: middle;
+}
+div.grid07 table tbody th.table01 table td * {
+    vertical-align: middle;
+}
+div.grid07 table tbody th.table01 table td table {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+div.grid07 table tbody th.table01 table td table th, div.grid07 table tbody th.table01 table td table td {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+div.grid07 table tbody th.table01 table tbody th.thmodi {
+    background-color: #BAFF00;
+}
+div.grid07 table tbody th.table01 table td.rnum {
+    font: 11px verdana;
+    text-align: right !important;
+}
+div.grid07 table tbody th.table01 table td.ctxt {
+    text-align: center !important;
+}
+/*
+div.table01 {
+    width: 793px;
+}
+*/
+
+/** added by Teo : Start **/
+div.inSectionTbl {
+    width: 761px;
+}
+/** added by Teo : End **/
+
+div.table01 table {
+    border-collapse: collapse;
+    font: 12px Dotum,sans-serif;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+    text-align: center;
+    width: 100%;
+    border-top: solid 1px #A9ADAF;
+}
+div.table01 table caption {
+    height: 24px;
+    margin-top: 4px;
+    text-align: left;
+}
+div.table01 table caption * {
+    vertical-align: middle;
+}
+div.table01 table th, div.table01 table td {
+    border-bottom: 1px solid #ededed;
+    font: 12px Dotum,sans-serif;
+    height: 28px;
+}
+div.table01 table th {
+    background-color: #F5F6F6;
+    vertical-align: middle;
+    color:#444;
+    padding: 3px 10px;
+    font-weight:bold;
+}
+div.table01 th span {
+    font-weight:normal;
+}
+div.table01 table td {
+    line-height: 1.6em;
+    text-align: justify;
+    vertical-align: middle;
+    padding:3px 5px;
+}
+div.table01 table td * {
+    vertical-align: middle;
+}
+div.table01 table td table {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+div.table01 table td table th, div.table01 table td table td {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+div.table01 table tbody th.thmodi {
+    background-color: #BAFF00;
+}
+div.table01 table td.rnum {
+    font: 11px verdana;
+    text-align: right !important;
+}
+div.table01 table td.ctxt {
+    text-align: center !important;
+}
+td.rnum, th.rnum {
+    font: 10px verdana !important;
+    text-align: right !important;
+}
+div.paging {
+    height: 30px;
+    margin-top:20px;
+    padding:0;
+    text-align: center;
+    width: 100%;
+}
+div.paging * {
+    vertical-align:middle;
+}
+div.paging span {
+    padding: 0 5px;
+    display:inline-block;
+    height:21px;
+    line-height:21px;
+}
+div.paging code {
+    font: 12px tahoma;
+    letter-spacing: 0;
+    padding: 0 5px 2px 7px;
+    display:inline-block;
+    height:21px;
+    line-height:21px;
+}
+div.paging code a {
+    margin:0;
+    padding: 0 5px 0 10px;
+    background: url("../img/ico_paging.gif") no-repeat scroll 0 -104px transparent;
+    color: #999999;
+    text-align:center;
+}
+div.paging code a.first {
+    background:none;
+}
+div.paging span img {
+    margin: 1px -5px 0;
+}
+div.paging ul {
+    font: 10px verdana;
+    list-style: none outside none;
+    margin: 0 auto;
+    width: 280px;
+}
+div.paging ul li {
+    float: left;
+    letter-spacing: -1px;
+    width: 20px;
+}
+div.paging .pagingNum {
+
+}
+div.paging a {
+    color: #333333;
+    text-decoration: none;
+}
+div.paging a:hover {
+    color: #FF0000;
+    text-decoration: none;
+}
+div.paging a:link {
+    color: #666666;
+    text-decoration: none;
+}
+div.paging a.cur {
+    color: #20A0B9;
+    font: bold 12px tahoma;
+}
+div.paging ul li a, div.paging ul li a:link, div.paging ul li a:visited {
+    color: #666666;
+    text-decoration: none;
+}
+div.paging ul li a:hover, div.paging ul li a:active {
+    color: #666666;
+    text-decoration: underline;
+}
+div.paging ul li a.cur {
+    color: #F95C17;
+    text-decoration: none;
+}
+div.paging .pgbtnright {
+    position:absolute;
+}
+div.pagingWrap {
+    position:relative;
+}
+div.btnWrapr {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+div.tab {
+    background: url("../img/tabBg.gif") repeat-x scroll 0 0 transparent;
+    overflow-x: hidden;
+    padding-bottom: 10px;
+}
+div.tab ul {
+    list-style: none outside none;
+}
+div.tab ul li {
+    float: left;
+}
+div.searchBox {
+    border: 0 none;
+    margin: 0 0 20px 0;
+    padding: 10px;
+    background-color: #F5F6F6;
+    border: 1px solid #CBCBCB;
+}
+div.searchBox fieldset {
+    border: 0 none;
+}
+div.searchBox fieldset legend {
+    display: none;
+}
+div.searchBox fieldset * {
+    vertical-align: middle;
+}
+div.searchBox fieldset input {
+    line-height: 15px;
+}
+div.searchBox fieldset div.sep {
+    height: 8px;
+}
+div.searchBox form * {
+    vertical-align: middle;
+}
+.srchBox code,.srchBWrap code{
+    display: inline-block;
+    margin: 3px 5px 3px 0;
+}
+.srchBox code em,.srchBox code label,.srchBWrap code label {
+    background: url("../img/bullet.gif") no-repeat scroll 0 -18px transparent;
+    color: #3D4A4F;
+    display: inline-block;
+    font-style: normal;
+    padding-left: 14px;
+}
+blockquote.sDesc {
+    border: 1px dotted #EFEFEF;
+    color: #AAAAAA;
+    font: 12px/1.6em Dotum,'????',arial;
+    height: 50px;
+    margin: 0 0 20px;
+    padding: 0 0 0 50px;
+    vertical-align: middle;
+}
+blockquote.sDesc * {
+    vertical-align: middle;
+}
+table tr td.imgInstructor {
+    vertical-align:top;
+    padding-top:15px;
+}
+table tr td .tblTxt {
+    line-height:1.4em;
+    padding:10px 0;
+}
+table tr td .tblTxt strong {
+    vertical-align:top;
+}
+div.tblnbt table {
+    border-top:none !important;
+}
+div.tblnbt table thead tr th,div.tblnbt table thead tr td {
+    border-top:none !important;
+}
+table.tblnbt {
+    border-top:none !important;
+}
+div.table01pop table {
+    border-collapse: collapse;
+    border-top: 1px solid #A9ADAF;
+    font: 12px Dotum,sans-serif;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+div.table01pop table th,div.table01pop table td {
+    color: #444444;
+    padding: 3px 5px;
+    height:25px;
+    vertical-align: middle;
+    border-bottom: 1px solid #EDEDED;
+}
+div.table01pop table th {
+    background-color:#F5F6F6;
+    font-weight: bold;
+}
+div.table01pop table td {
+    vertical-align:middle;
+    text-align:left;
+}
+div.table01pop table td * {
+    vertical-align:middle;
+}
+td p.txt {
+    line-height:1.4em;
+    padding-top:5px;
+}

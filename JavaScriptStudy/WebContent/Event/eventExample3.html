@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>디폴트 이벤트 제거</title>
+
+<script type="text/javascript">
+// window load 이벤트 처리
+window.onload = function (){
+	document.getElementById("myForm").onsubmit = function() {
+		// 유효성 검증
+		var id = document.getElementById("userId").value;
+		if (id == null || id.length == 0) {
+			document.getElementById("message").innerHTML = "아이디를 입력해라";
+			return false;
+		}else{
+			return true;	
+		}
+	}
+}
+</script>
+</head>
+<body>
+
+<form id="myForm" action="서버프로그램" method="get">
+	<input type="text" name="id" id="userId"><span id="message"></span><br>
+	<input type="submit" value="전송">
+</form>
+
+</body>
+</html>

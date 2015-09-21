@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<title>테이블 관련 스타일 속성들</title>
+<meta charset="utf-8" />
+<style type="text/css">
+table {
+	border-top: double 5px orange;
+	border-bottom: double 3px orange;
+	border-collapse: collapse;
+	width: 400px;
+	text-align: center;
+	position: relative;
+	left: 10%
+}
+
+th {
+	border-bottom: dotted 2px orange;
+	background-color: #FFCC66;
+	color: white;
+	padding: 10px
+}
+
+td {
+	border-bottom: dotted 1px orange;
+	padding: 10px
+}
+
+caption {
+	color: #FF6600;
+	font-size: 11pt;
+	font-weight: bold
+}
+
+.tl {
+	border-left: solid 1px orange
+}
+</style>
+</head>
+<body>
+	<table>
+		<caption>테두리 스타일을 다양하게</caption>
+		<tr>
+			<th>순번</th>
+			<th class=tl>이름</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td class=tl>니키</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td class=tl>주노</td>
+		</tr>
+	</table>
+</body>
+</html>

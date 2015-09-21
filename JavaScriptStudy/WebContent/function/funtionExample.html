@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 정의 함수</title>
+<script type="text/javascript">
+/** 사용자 정의 함수 정의방법 3가지 */
+// #1. 익명함수
+var myFunction = function(){
+	console.log("이름없는 함수 입니다.");
+};
+
+// #2. 선언형 함수
+function 더하기(x, y){
+	return x + y;
+}
+
+// #3. Function 생성자를 이용한 함수
+var myFun = new Function("x","y","return x+y;");
+
+</script>
+</head>
+<body>
+<script type="text/javascript">
+// 함수 호출(사용)
+console.log(myFunction);
+myFunction();
+
+var result = 더하기(10, 20);
+result = myFun(50,80);
+console.log(result);
+console.log(myFun);
+</script>
+
+</body>
+</html>

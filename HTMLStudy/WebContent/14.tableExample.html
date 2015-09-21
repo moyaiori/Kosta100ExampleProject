@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<title>테이블 관련 스타일 속성들</title>
+<meta charset="utf-8" />
+<style type="text/css">
+table {
+	border: none 1px orange;
+	border-collapse: collapse;
+	text-align: center;
+	left: 10%;
+	width: 400px;
+	margin: 50px auto;
+}
+
+th {
+	background-image: url(images/bg.gif);
+	color: #3366CC;
+	padding: 15px
+}
+
+td {
+	padding: 10px;
+}
+
+caption {
+	color: #6600FF;
+	font-size: 11pt;
+	font-weight: bold
+}
+
+.td_dot {
+	background-image: url(images/dot.gif)
+}
+</style>
+</head>
+<body>
+	<table>
+		<caption>점선 이미지와 배경이미지 지정</caption>
+		<tr>
+			<td class=td_dot colspan=2></td>
+		<tr>
+		<tr>
+			<th>순번</th>
+			<th>이름</th>
+		</tr>
+		<tr>
+			<td class=td_dot colspan=2></td>
+		<tr>
+		<tr>
+			<td>1</td>
+			<td>니키</td>
+		</tr>
+		<tr>
+			<td class=td_dot colspan=2></td>
+		<tr>
+		<tr>
+			<td>2</td>
+			<td>주노</td>
+		</tr>
+		<tr>
+			<td class=td_dot colspan=2></td>
+		<tr>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+.testbg {
+	background-color: tomato;
+	clear: both;
+}
+
+.clear{
+	clear: both;;
+}
+
+body{
+	margin: 0px;
+}
+
+/* 상단 */
+header{
+	padding-top: 30px;
+	padding-left: 25px;
+	margin: 0px;
+	font-family: "나눔고딕코딩, 바탕";
+	color: #ffffff;
+	background-color: black;
+	height: 95px;
+	width: 98.1%;
+	min-width: 800px;
+}
+
+.headerView{
+	float: right;
+	height: 36px;
+	padding-top: 15px;
+}
+
+.headerFont{
+	font-family: "나눔고딕코딩, 바탕";
+	font-size: 25px;
+}
+
+.mainList{
+	width: 100%;
+	padding-right:40px;
+	text-align: right;
+	list-style-type: none;
+	font-family: "나눔고딕코딩, 바탕, 궁서";
+	background-color: green;
+}
+
+dl.mainList dd{
+	float: left;
+	color:#5c5c5c;
+}
+
+dl.mainList dd:HOVER{
+	background-color: gray;
+}
+
+/* 본문쪽 */
+.mainView{
+	height: 1000px;
+	width: 1000px;
+	margin:0 auto;
+}
+
+.contentView{
+	float:right;
+	height: 1000px;
+	width: 780px;
+	padding-left: 20px;
+}
+/* 사이드 메뉴 */
+
+.sideMenu{
+	clear: left;
+	<!--background-color: green;-->
+	height: 800px;
+	width: 200px;
+}
+
+/* 로그인 화면 */
+
+.loginBox{
+	padding: 10px;
+	text-align: center;
+}
+
+.loginView{
+	height: 200px;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	min-width: 200px;
+	width: 200px;
+	<!--background-color: red; -->
+}
+
+.loginButtonBox{
+	padding-top: 10px;
+}
+
+.loginHeaer{
+	font-family: "나눔고딕코딩, 바탕";
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 15px;
+}
+
+.loginTF{
+	margin-top: 10px;
+	line-height: 22px;
+}
+
+/* 풋터 */
+footer{
+	clear:both;
+	text-align: center;
+	background-color: black;
+	color:#ffffff;
+	height: 30px;
+}
+
+/* 본문글씨 */
+h1{
+	padding-bottom: 10px;
+	border-bottom:1px solid #ccc;
+	font-size: 26px;
+}
+
+h2{
+	font-size: 12px;
+}
+
+/* 회원가입 */
+
+.joinTableBody th{
+	width: 200px;
+	border-bottom: 1px solid;
+	height: 40px;
+}
+
+.joinTableBody td{
+	width: 400px;
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+.joinTableBody td input{
+	height: 25px;
+}
+
+/* 회원가입 이메일 앞쪽 TextFile */
+.emailTF1{
+	width: 80px;
+}
+
+/* 회원가입 이메일 앞쪽 TextFile */
+.emailTF2{
+	width: 120px;
+}
+
+.telTF{
+	width: 60px;
+}
+
+
+
+

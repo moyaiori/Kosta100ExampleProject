@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본 event 모델에서 이벤트 핸들러 제거</title>
+
+<script type="text/javascript">
+// window load 이벤트 처리
+window.onload = function (){
+	//alert("문서 로드가 완료되었다.");
+	var eventSorce = document.getElementById("button");
+	eventSorce.onclick = function(ev){var event = ev || window.event;
+		
+		console.log(ev);
+		//console.log("클릭 이벤트 처리");
+		//console.log(this);
+		this.style.border = "1px solid red";
+		
+		// 전달된 이벤트 객체의 주요 속성들
+		for ( var i in event) {
+			console.log(i + " : " + event);
+		}
+	}
+;}
+
+</script>
+
+</head>
+<body>
+
+<h2 id="button">클릭</h2>
+
+테스트 내용입니다.
+
+</body>
+</html>

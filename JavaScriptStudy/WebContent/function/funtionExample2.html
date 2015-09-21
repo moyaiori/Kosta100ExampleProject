@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비정형 인자 함수 정의</title>
+<script type="text/javascript">
+function sumAll(){
+	console.log(typeof arguments);
+	var sum = 0;
+	for(var i in arguments){
+		sum += arguments[i];
+	}
+	/*
+	for (var i = 0; i < arguments.length; i++) {
+		sum += arguments[i];
+	}
+	*/
+	return sum;
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+	var result = sumAll(1);
+	result = sumAll(1, 2);
+	result = sumAll(1, 2, 3);
+	console.log(result);
+</script>
+
+</body>
+</html>

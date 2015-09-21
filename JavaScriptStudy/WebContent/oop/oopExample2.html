@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+</head>
+<body>
+<script type="text/javascript">
+// 생성자 함수(일상생활의 객체를 추상화)
+function Student(name, korean, math, english, science){
+	this.name = name;
+	this.korean = korean;
+	this.math = math;
+	this.english = english;
+	this.science = science;
+	
+	this.getSum = function(){
+		return this.korean + this.math + english + this.science;
+	};
+	
+	this.getAverage = function(){
+		return this.getSum() / 4;
+	};
+	
+	this.toString = function(){
+		return this.name + '\t' + this.getSum() + '\t' + this.getAverage();
+	};
+}
+
+var student = new Student("이광용", 100, 90, 80, 70);
+var student2 = new Student("김광용", 70, 80, 90, 100);
+/*
+console.log(student.toString());
+*/
+console.log(student instanceof Student);
+console.log(student instanceof Object);
+
+var str = new String("JavaScript");
+console.log(str instanceof String);
+console.log(str instanceof Object);
+
+// 자바의 static 변수처럼 공유
+Student.schollName = "한국소프트웨어기술협회";
+console.log(Student.schollName);
+
+/*
+console.log(student);
+console.log(student2);
+
+var student3 = student;
+console.log(student3);
+
+console.log(student.name);
+
+// 자바스크립트에서 기본적으로 제공하는 생성자 함수들(객체)
+// String, Date, Number, Array, Function, Boolean : 기본객체들
+var str = "이광용";			// 기본타입
+var str = new String("이광용 입니다."); // String 객체가 된다.
+
+console.log(str.substring(0, 5));
+
+var some1 = "JavaScript";
+var some2 = new String("JavaScript");
+
+console.log(typeof some1);
+console.log(typeof some2);
+console.log(some1 == some2);
+console.log(some1 === some2);
+*/
+</script>
+</body>
+</html>

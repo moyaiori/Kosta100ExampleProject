@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window 객체</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var child = window.open("http://www.kosta.or.kr", "child", "width=600, height=300");
+console.log(child);
+
+var message = "서버로 부터 받은 공지사항";
+var win = window.open("", "child", "width=600, height=300");
+
+if (win) {
+	win.document.write(message);
+}else{
+	alert("팝업창이 차단되어있습니다");
+}
+
+for ( var i in window.screen) {
+	console.log(i);
+}
+
+console.log(screen.width);
+console.log(screen.availHeight);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서객체의 스타일</title>
+
+<script type="text/javascript">
+window.onload = function(){
+	var h1E = document.getElementById("title");
+	h1E.style.border = "2px solid red";
+	h1E.style.fontFamily = "나눔고딕코딩";
+	h1E.style.color = "#00ff00";
+	h1E.style.backgroundColor = "#999999";
+	//h1E.style.display = "none";
+}
+
+function hide(){
+	var h1E = document.getElementById("title");
+	h1E.style.display = "none";
+}
+
+</script>
+
+</head>
+<body>
+
+<a href="javascript:hide();">숨기기</a>
+<h1 id="title">타이블1</h1>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

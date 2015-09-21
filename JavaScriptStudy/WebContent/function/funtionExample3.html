@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비정형 인자 함수 정의</title>
+</head>
+<script type="text/javascript">
+// 내부함수
+function pythagoras(width, height){
+	function square(x){
+		return x * x;
+	}
+	
+	return Math.sqrt(square(width) + square(height));
+}
+</script>
+<body>
+<script type="text/javascript">
+var answer = pythagoras(50, 50);
+alert(answer);
+</script>
+</body>
+</html>
