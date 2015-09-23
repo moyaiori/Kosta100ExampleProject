@@ -17,7 +17,6 @@ public class GugudanServlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 //		response.setContentType("text/plain; charset=utf-8");
 		PrintWriter out = response.getWriter();
-		
 		out.println("<!doctype html>");
 		out.println("<html>");
 		out.println("<head>");
@@ -37,6 +36,11 @@ public class GugudanServlet extends HttpServlet {
 		out.println("</table>");
 		out.println("</body>");
 		out.println("</html>");
+		
+		request.setCharacterEncoding("utf-8");
+
+		System.out.println(request.getAttribute("id"));
+		System.out.println(request.getParameter("name"));
 	}
 
 }

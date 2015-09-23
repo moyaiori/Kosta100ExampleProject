@@ -34,6 +34,9 @@ public class HelloServlet extends HttpServlet {
 		Calendar today = Calendar.getInstance();
 		String todayStr = String.format("%1$tF %1$tT", today);
 		out.println("오늘의 날짜 : " + todayStr);
+		
+		request.getRequestDispatcher("/gugudan").include(request, response);
+		
 		out.println("</body>");
 		out.println("</html>");
 	}

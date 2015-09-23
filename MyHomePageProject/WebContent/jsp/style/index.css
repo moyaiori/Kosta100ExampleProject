@@ -20,7 +20,7 @@ header{
 	color: #ffffff;
 	background-color: black;
 	height: 95px;
-	width: 98.1%;
+	width: 100%;
 	min-width: 800px;
 }
 
@@ -46,12 +46,36 @@ header{
 
 dl.mainList dd{
 	float: left;
-	color:#5c5c5c;
+	color:white;
+    text-decoration: none;
+}
+/* unvisited link */
+a:link {
+    text-decoration: none;
+    color:white;
 }
 
-dl.mainList dd:HOVER{
-	background-color: gray;
+/* visited link */
+a:visited {
+    text-decoration: none;
+    color:white;
 }
+
+/* mouse over link */
+a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: #b7b7b7;
+    text-decoration: none;
+}
+
+
+
+
 
 /* 본문쪽 */
 .mainView{
@@ -115,18 +139,21 @@ footer{
 	text-align: center;
 	background-color: black;
 	color:#ffffff;
-	height: 30px;
+	height: 70px;
 }
 
 /* 본문글씨 */
-h1{
+.titleText{
+	margin-top: 10px;
 	padding-bottom: 10px;
 	border-bottom:1px solid #ccc;
 	font-size: 26px;
+	font-weight: bold;
 }
 
-h2{
-	font-size: 12px;
+.mainText{
+	margin:8px 0px;
+	font-size: 15px;
 }
 
 /* 회원가입 */
@@ -145,6 +172,7 @@ h2{
 
 .joinTableBody td input{
 	height: 25px;
+	line-height: 15px;
 }
 
 /* 회원가입 이메일 앞쪽 TextFile */

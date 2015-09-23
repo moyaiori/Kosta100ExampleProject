@@ -29,16 +29,28 @@ public class HttpServletRequestServlet extends HttpServlet {
 		String method = request.getMethod();
 		String uri = request.getRequestURI();
 		String httpVersion = request.getProtocol();
+		String query = request.getQueryString();
 		
 		Enumeration<String> e = request.getHeaderNames();
+		out.println("<ul>");
+		out.println("<li>요청방식 : " + method +"</li>");
+		out.println("<li>요청 URI : " + uri +"</li>");
+		out.println("<li>요청버전 : " + httpVersion +"</li>");
+		out.println("<li>쿼리스트링 : " + query +"</li>");
+		
+		
 		while(e.hasMoreElements()){
 			String name = e.nextElement();
 			String value = request.getHeader(name);
-			out.println(name + " : " + value + "<br>");
+			out.println("<li>" + name + " : " + value + "<br></li>");
 		}
+		out.println("</ul>");
+		out.println(request.getRemoteHost() + "<br>");
+		out.println(request.getRemoteAddr() + "<br>");
+		out.println(request.getContentType() + "<br>");
+		out.println(request.getContentLength() + "<br>");
+		out.println(request.getContextPath() + "<br>");
 		out.println("</body>");
-		out.println("</html>");
-		
-	}
+		out.println("</html>");}
 
 }

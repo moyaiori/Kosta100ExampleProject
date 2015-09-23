@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>File Upload Form</title>
+</head>
+<body>
+	<!--  <form action="" method="post" enctype="application/x-www-form-urlencoded"> -->
+	<form action="/servlet/upload" method="post" enctype="multipart/form-data">
+		<table border="1">
+			<tr>
+				<td colspan="2" align="center">파일 업로드</td>
+			</tr>
+			<tr>
+				<td>작성자</td>
+				<td><input type="text" name="writer" size="15"></td>
+			</tr>
+			<tr>
+				<td>업로드 파일</td>
+				<td><input type="file" name="upfile" size="25"></td>
+			</tr>
+			<tr>
+				<td colspan=2  align="center">
+					<input type="submit" value="올리기"> <input type="reset" value="취소">
+				</td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+window.onload = function(){
+	function donwload(file){
+		var downloadPath = "download?file=";
+		downloadPath += file;
+		location.replace(downloadPath);
+		console.log("다운로드");
+	}
+}
+
+function lol(text){
+	console.log(text);
+}
+</script>
+
+<button id='logout'>로그아웃</button>
+<table style="border: 1px solid blue">
+	<tr>
+		<th>연번</th>
+		<th>파일명</th>
+		<th>크기</th>
+		<th>작성자</th>
+		<th>다운로드</th>
+	</tr>
+	<tr>
+		<td>00</td>
+		<td>test.exe</td>
+		<td>100kb</td>
+		<td>이광용</td>
+		<td><button onclick="lol('웃기냐')">다운로드</button></td>
+	</tr>
+</table>
+
+</body>
+</html>
