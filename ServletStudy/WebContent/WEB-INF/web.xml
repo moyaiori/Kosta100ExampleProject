@@ -167,6 +167,15 @@
     <servlet-name>jdbcServlet</servlet-name>
     <url-pattern>/jdbc</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>jdbcServlet2</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.jdbcServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>jdbcServlet2</servlet-name>
+    <url-pattern>/jdbc2</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 
