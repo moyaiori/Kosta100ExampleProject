@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+<script src="js/ajax.js"></script>
+</head>
+<body>
+<script>
+
+var param = encodeURIComponent("이광용");
+
+ajax({
+	method: "get",
+	url:"data2.jsp",
+	data: "id=" + param,
+	callback: function(xhr){
+		setView(xhr);
+	}
+});
+
+function setView(message){
+	document.body.innerHTML = message.responseText;
+}
+
+</script>
+
+</body>
+</html>

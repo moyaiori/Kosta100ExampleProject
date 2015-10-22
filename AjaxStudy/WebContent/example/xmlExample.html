@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ajax 비동기 통신</title>
+<script src="../js/ajax.js"></script>
+<script>
+window.onload = function(){
+	var button = document.getElementById("button");
+	button.onclick = function(){
+		ajax({
+			url: "bookList.jsp",
+			callback : function(xhr){
+				onMessage(xhr);
+			}
+		});
+		
+		// 보기 <-> 숨기기
+		if(button.firstChild.nodeValue == "보기"){
+			button.firstChild.nodeValue = "숨기기";
+			document.getElementById("view").style.display = "block";			
+		}else{
+			button.firstChild.nodeValue = "보기";
+			document.getElementById("view").style.display = "none";						
+		}
+	}
+	
+}
+
+function onMessage(xhr){
+	var xmlDocument = xhr.responseXML;
+	// XML 데이터를 table로 동적 출력
+	var tableE = "<table border='1' width='80%'>";
+	tableE += "<tr>";
+	tableE += "<th>제목</th><th>저자</th><th>출판사</th><th>가격</th><th>장르</th>";
+	tableE += "</tr>";
+	var bookList = xmlDocument.getElementsByTagName("book");
+	for(var i=0; i<bookList.length; i++){
+		tableE += "<tr>";
+		var bookElement = bookList[i];
+		var elements = bookElement.childNodes;
+		for(var j=0; j<elements.length; j++){
+			var element = elements[j];
+			if(element.nodeType == 1){
+				tableE += "<td>"+element.firstChild.nodeValue+"</td>";
+			}
+		}
+		tableE += "<td>"+bookElement.getAttribute("kind")+"</td>";
+		tableE += "</tr>";		
+	}
+	
+	tableE += "</table>";
+	document.getElementById("view").innerHTML = tableE ; 
+}
+</script>
+</head>
+<body>
+<h2>교재 목록</h2>
+<span id="button">보기</span>
+<div id="view">
+</div>
+</body>
+</html>
+
+
+

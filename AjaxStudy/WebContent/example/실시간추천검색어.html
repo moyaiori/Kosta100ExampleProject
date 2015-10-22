@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>추천 검색어</title>
+<style>
+input[type='text'] {
+ 	border: 5px solid #2DB400;
+}
+
+#suggestBox{
+	visibility:hidden;
+	position:relative;
+	width:150px;
+}
+</style>
+<script src="../js/ajax.js"></script>
+<script>
+window.onload = function(){
+	document.getElementById('keyword').onkeyup = function(){
+		sendKeyword();
+	}
+	document.getElementById('search').onsubmit = function(){
+		// 검색어 전송
+		return true;
+	}
+	
+}
+
+// 키워드 전송
+function sendKeyword(){
+	var keyword =  encodeURIComponent(document.getElementById("keyword").value);
+	// 입력값이 없을 경우..
+	if(keyword == null || keyword.length == 0){
+		hideSuggest();
+	}else{
+		var params = "keyword=" + keyword;
+		ajax({
+			url: "suggestProc.jsp",
+			data: params,
+			callback: onMessage
+		});
+	}
+}
+
+function onMessage(xhr){
+	var json = JSON.parse(xhr.responseText);
+	if(json.count > 0){
+		var suggests = "";
+		for(var i  in json.list){
+			var word = json.list[i];
+			suggests += "<a href=\"javascript:selectSuggest('"+word+"');\">"+word+"</a><br>";
+		}
+		var suggestList = document.getElementById("suggetList");
+		suggestList.innerHTML = suggests;
+		showSuggest();	
+	}else{
+		hideSuggest();
+	}
+}
+
+// 추천검색어 보이기 처리
+function showSuggest(){
+	var element = document.getElementById("suggestBox");
+	if(element){
+		element.style.visibility="visible";
+	}
+}
+
+
+// 추천검색어 히든 처리
+function hideSuggest(){
+	var element = document.getElementById("suggestBox");
+	if(element){
+		element.style.visibility = 'hidden';
+	}
+}
+
+// 추천검색어 선택 처리
+function selectSuggest(suggest){
+	document.getElementById("keyword").value = suggest;		
+	hideSuggest();			
+}
+</script>
+</head>
+
+<body>
+<div>
+	<form name="search" id="search" action="search.mall">
+	<input type="text" id="keyword" name="keyword">
+	<input type="submit" value="검색"/>
+	<div id="suggestBox">
+		<div id="suggetList"></div>
+	</div>
+	</form> 
+</div>
+</body>
+</html>
+
+
+
+
+

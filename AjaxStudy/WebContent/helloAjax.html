@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+</head>
+<body>
+<script>
+// 서버에 비동기 요청을 위한 XMLHttpRequest 객체 생성
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function(){
+	if(xhr.readyState == 4){
+		//alert("수신완료!!");
+		document.body.innerHTML = xhr.responseText;
+	}else{
+		document.body.innerHTML = "데이터 수신중";
+		//alert("데이터 수신중 ");
+	}
+}
+
+xhr.open("get", "data.jsp", true);
+xhr.send();
+//alert(xhr.responseText);
+
+
+</script>
+
+</body>
+</html>

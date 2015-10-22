@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ajax 비동기 통신</title>
+<script src="../js/ajax.js"></script>
+<script>
+window.onload = function(){
+	ajax({
+		url: "jsonBookList.jsp",
+		callback : function(xhr){
+			onMessage(xhr);
+		}
+	});
+}
+
+function onMessage(xhr){
+	var object = JSON.parse(xhr.responseText);
+	var tableE = "<table border='1' width='80%'>";
+	tableE += "<tr>";
+	tableE += "<th>제목</th><th>저자</th><th>출판사</th><th>가격</th><th>장르</th>";
+	tableE += "</tr>";
+	var bookList = object.list;
+	for(var i=0; i<bookList.length; i++){
+		tableE += "<tr>";
+		var book = bookList[i];
+		tableE += "<td>"+book.title+"</td>";
+		tableE += "<td>"+book.author+"</td>";
+		tableE += "<td>"+book.publisher+"</td>";
+		tableE += "<td>"+book.price+"</td>";
+		tableE += "<td>"+book.kind+"</td>";
+		tableE += "</tr>";		
+	}
+	tableE += "</table>";
+	document.getElementById("view").innerHTML = tableE ; 
+}
+</script>
+</head>
+<body>
+<h2>교재 목록</h2>
+<div id="view">
+</div>
+</body>
+</html>
+
+
+

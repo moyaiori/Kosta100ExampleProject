@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>회원가입 화면</title>
+<script src="../js/ajax.js"></script>
+<script>
+var checked = false;
+window.onload = function(){
+	// 이벤트소스에 이벤트리스너 등록
+	document.regist.id.onkeyup = function(){
+		var userId = this.value;
+		//console.log(userId);
+		//console.log(userId.length);
+		if(userId.length >= 6 && userId.length <= 8){
+			// 서버에 아이디 전송
+			ajax({
+				url: "idDupCheck.jsp",
+				data: "id="+userId,
+				callback : function(xhr){
+					onMessage(xhr);
+				}
+			});
+			checked = true;
+		}else{
+			setMessage("아이디는 6~8자 이어야 합니다.");
+		}
+	}
+	
+	document.regist.onsubmit = function(){
+		if(checked){
+			// 기타 폼 데이터에 대한 유효성 체크
+			return true;
+		}else{
+			alert("아이디 중복체크 확인하여 주세요.")
+			return false;
+		}
+	}
+}
+
+function onMessage(xhr){
+	var result = xhr.responseText;
+	//console.log(result);
+	if(result.trim() == "true"){//아이디 중복
+		setMessage("중복된 아이디로 사용하실 수 없습니다.", "red");
+	}else{
+		setMessage("사용 가능한 아이디입니다.", "blue");
+	}
+}
+
+function setMessage(message, color){
+	var messageBox = document.getElementById("messageBox");
+	if(messageBox){
+		messageBox.innerHTML = message;
+	}
+	if(color){
+		messageBox.style.color = color;
+	}
+}
+
+</script>
+</head>
+<body>
+<form name="regist" action="regist.mall" method="post">
+  <table width="500px" border="1" >
+    <tr>
+      <td width="20%">아이디</td>
+      <td><input type="text" name="id" size="8" maxlength="8"> <span id="messageBox"></span></td>
+    </tr>
+    <tr>
+      <td>이름</td>
+      <td><input type="text" size="8" maxlength="8"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <input type="submit" value="가입"/>
+        <input type="reset" value="취소"/>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>회원가입 화면</title>
+<script type="text/javascript">
+function createRequest() {
+	var xhr = null;
+	try {
+		xhr = new XMLHttpRequest();
+	} catch (e) {
+		// 익스플로러 6 이하
+		xhr = new ActiveXObject("Msxml2.XMLHTTP");
+	}
+
+	return xhr;
+}
+
+
+function setView(message){
+	var span = document.getElementById("check");
+	
+	if(message.trim() == "false"){ // 사용가능
+		span.style.color = "green";
+		span.innerHTML = "사용가능한 아이디 입니다.";
+	}else{ // 중복
+		span.style.color = "red";
+		span.innerHTML = "중복된 아이디 입니다.";
+	}
+	
+}
+
+window.onload = function(){
+	
+	var xhr = new createRequest();
+	var id = document.getElementById("id").value;
+	var span = document.getElementById("check");
+	
+	document.getElementById("id").onkeyup = function(){
+		xhr.open("get", "idDupCheck.jsp" + "?id=" + id, true);
+		xhr.send();
+	}
+	
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4) {
+			if (xhr.status == 200) {
+				setView(xhr.responseText);
+			} else if (xhr.status == 400 || xhr.status == 404) {
+				alert("페이지를 찾을수 없습니다.");
+			} else {
+				alert("서버 장애가 발생하였습니다.");
+			}
+		} else {
+			//console.log("데이터 수신중");
+		}
+	}
+	
+	var submit = document.getElementById("submit");
+	submit.onclick = function(){
+		var id = document.getElementById("id").value;
+		if(id == null || id.trim().length == 0){
+			alert("아이디를 입력하여 주세요.");
+			return false;
+		}else{
+			alert("회원가입완료!!!");
+			return true;
+		}
+	}
+}
+
+
+</script>
+</head>
+<body>
+<form action="#" method="post">
+  <table width="500px" border="1" >
+    <tr>
+      <td width="20%">아이디</td>
+      <td><input type="text" id="id" name="id" size="8" maxlength="8"><span id="check"></span></td>
+    </tr>
+    <tr>
+      <td>이름</td>
+      <td><input type="text" size="8" maxlength="8"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <input type="submit" value="가입" id="submit"/>
+        <input type="reset" value="취소"/>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

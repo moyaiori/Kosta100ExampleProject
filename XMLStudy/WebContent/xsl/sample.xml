@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- XSL 적용을 위한 PI 선언 -->
+<?xml-stylesheet type="text/xsl" href="sample.xsl" ?>
+
+<회원 아이디="bangry">
+	<이름>김기정</이름>
+	<나이>20</나이>
+	<주소>
+		<시>서울</시>
+		<구>중랑</구>
+		<동>신내</동>
+	</주소>
+</회원>

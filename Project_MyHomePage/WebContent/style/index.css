@@ -1,0 +1,601 @@
+.testbg {
+	background-color: tomato;
+	clear: both;
+}
+
+.clear{
+	clear: both;;
+}
+
+body{
+	margin: 0px;
+}
+
+/* 상단 */
+header{
+	padding-top: 30px;
+	padding-left: 25px;
+	margin: 0px;
+	font-family: "나눔고딕코딩, 바탕";
+	color: #ffffff;
+	background-color: black;
+	height: 95px;
+	min-width: 800px;
+}
+
+.headerView{
+	float: right;
+	height: 36px;
+	padding-top: 15px;
+}
+
+.headerFont{
+	font-family: "나눔고딕코딩, 바탕";
+	font-size: 25px;
+}
+
+.mainList{
+	width: 100%;
+	padding-right:40px;
+	text-align: right;
+	list-style-type: none;
+	font-family: "나눔고딕코딩, 바탕, 궁서";
+	background-color: green;
+}
+
+dl.mainList dd{
+	float: left;
+	color:white;
+    text-decoration: none;
+}
+
+/* unvisited link */
+.headerView .mainList dd a:link {
+    text-decoration: none;
+    color:white;
+}
+
+/* visited link */
+.headerView .mainList dd a:visited {
+    text-decoration: none;
+    color:white;
+}
+
+/* mouse over link */
+.headerView .mainList dd a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+/* selected link */
+.headerView .mainList dd a:active {
+    color: #b7b7b7;
+    text-decoration: none;
+}
+
+/* 해더쪽 링크 */
+/* unvisited link */
+.headerFont a:link {
+    text-decoration: none;
+    color:white;
+}
+
+/* visited link */
+.headerFont a:visited {
+    text-decoration: none;
+    color:white;
+}
+
+/* mouse over link */
+.headerFont a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+/* selected link */
+.headerFont a:active {
+    color: #b7b7b7;
+    text-decoration: none;
+}
+
+
+
+/* 본문쪽 */
+.mainView{
+	height: 1000px;
+	width: 1000px;
+	margin:0 auto;
+}
+
+.contentView{
+	float:right;
+	height: 1000px;
+	width: 780px;
+	padding-left: 20px;
+}
+/* 사이드 메뉴 */
+
+.sideMenu{
+	clear: left;
+	<!--background-color: green;-->
+	height: 800px;
+	width: 200px;
+}
+
+/* 로그인 화면 */
+
+.loginBox{
+	padding: 10px;
+	text-align: center;
+}
+
+.loginView{
+	height: 200px;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	min-width: 200px;
+	width: 200px;
+	<!--background-color: red; -->
+}
+
+.loginButtonBox{
+	padding-top: 10px;
+	text-align: center;
+}
+
+.loginHeaer{
+	font-family: "나눔고딕코딩, 바탕";
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 15px;
+}
+
+.loginTF{
+	margin-top: 10px;
+	line-height: 22px;
+}
+
+/* 풋터 */
+footer{
+	clear:both;
+	text-align: center;
+	background-color: black;
+	color:#ffffff;
+	height: 70px;
+}
+
+/* 본문글씨 */
+.titleText{
+	margin-top: 10px;
+	padding-bottom: 10px;
+	border-bottom:1px solid #ccc;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+.mainText{
+	margin:8px 0px;
+	font-size: 15px;
+}
+
+/* 회원가입 */
+
+.joinTableBody th{
+	width: 200px;
+	border-bottom: 1px solid;
+	height: 40px;
+}
+
+.joinTableBody td{
+	width: 400px;
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+.joinTableBody td input{
+	height: 25px;
+	line-height: 15px;
+}
+
+.telTF{
+	width: 60px;
+}
+
+/* 방명록 스티커 메모 */
+.guestBook{
+	overflow: hidden;
+	padding: 0px;
+}
+
+.guestBook li{
+	margin: 1em;
+	float: left;
+	list-style: none;
+}
+
+.guestBook li a{
+	text-decoration: none;
+	color: black;
+	background: #FFFF59;
+	display: block;
+	height: 12em;
+	width: 12em;
+	padding: 1em;
+	box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+}
+
+.guestBook li a .guestBookTitle{
+	padding: 0px;
+	margin: 0px;
+	font-size: 120%;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.guestBook li a .guestBookName{
+	padding: 0px;
+	margin: 0px;
+	float: left;
+	color:gray;
+	overflow: hidden;
+}
+
+.guestBook li a .guestBookTime{
+	padding: 0px;
+	margin: 0px;
+	float: right;
+	color:gray;
+}
+
+.guestBook li a .guestBookContent{
+	padding: 0px;
+	margin: 0px;
+	clear: both;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	height: 9em;
+}
+
+.guestBook li a .guestBookTitleTF{
+	background: #FFFF59;
+	border: 0px solid;
+	height: 18px;
+	line-height: 21px;
+	width: 100%;
+	font-size: 18px;
+	border-bottom: 1px solid;
+}
+
+
+
+.guestBook li a .guestBookContentTF{
+	padding: 0px;
+	margin: 0px;
+	clear: both;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	height: 11em;
+	background: #FFFF59;
+	border: 0px solid;
+	resize: none;
+	width: 100%;
+}
+
+.guestBook li a form input{
+	float: right;
+}
+
+/* 방명록 글회전 */
+.guestBook li:nth-child(even) a{
+	-webkit-transform: rotate(4deg);
+	position: relative;
+	top:5px;
+	-webkit-transition: -webkit-transform .15s linear;
+}
+
+.guestBook li:nth-child(even) a:HOVER{
+	-webkit-transform: scale(1.15);
+	position: relative;
+	top:5px;
+	z-index: 5;
+}
+
+.guestBook li:nth-child(3n) a{
+	-webkit-transform: rotate(-3deg);
+	position: relative;
+	top:5px;
+	-webkit-transition: -webkit-transform .15s linear;
+}
+
+.guestBook li:nth-child(3n) a:HOVER{
+	-webkit-transform: scale(1.15);
+	position: relative;
+	top:5px;
+	z-index: 5;
+}
+
+.guestBook li:nth-child(5n) a{
+	-webkit-transform: rotate(5deg);
+	position: relative;
+	top:5px;
+	-webkit-transition: -webkit-transform .15s linear;
+}
+
+.guestBook li:nth-child(5n) a:HOVER{
+	-webkit-transform: scale(1.15);
+	position: relative;
+	top:5px;
+	z-index: 5;
+}
+
+/* 게시판 테이블 */
+.boardDiv{
+	margin: 5px auto;
+}
+
+.boardTable{
+	width: 100%;
+}
+
+.boardNum{
+	text-align: center;
+	width: 36px;
+	padding: 10px 0px;
+}
+
+.boardTitle{
+	text-align: left;
+	padding-left: 10px;
+	overflow: hidden;
+}
+
+.boardDownload{
+	text-align: center;
+	max-width: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 0em;
+}
+
+.boardWriter{
+	text-align: center;
+	width: 100px;
+}
+
+
+.boardDate{
+	text-align: center;
+	width: 85px;
+}
+
+.boardIP{
+	text-align: center;
+	width: 125px;
+}
+
+.boardViews{
+	text-align: center;
+	width: 32px;
+}
+
+.boardDiv table, th, td{
+	border-collapse: collapse;
+}
+
+.boardDiv td{
+	border-bottom: 1px solid #ccc;
+}
+
+.boardDiv th{
+	padding: 7px 0px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	background: #ccc;
+}
+
+.boardTable tbody tr:HOVER{
+	background: #E8E8E8;
+}
+
+
+.boardFooter div{
+	height: 15px;
+}
+
+.boardFooter .boardSearch{
+	float: left;
+	padding: 15px;
+}
+
+.boardFooter .boardWrite{
+	float: right;
+	padding: 15px;
+}
+
+.boardFooter .boardPageing{
+	clear: both;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.boardFooter .boardPageing ul{
+	list-style: none;
+}
+
+.boardFooter .boardPageing ul li{
+	display: inline;
+}
+
+.boardFooter .boardPageing ul li a{
+	border: 1px solid;
+	padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* unvisited link */
+.boardFooter .boardPageing ul li a:link {
+    text-decoration: none;
+    color: black;
+}
+
+/* visited link */
+.boardFooter .boardPageing ul li a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+/* mouse over link */
+.boardFooter .boardPageing ul li a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+/* selected link */
+.boardFooter .boardPageing ul li a:active {
+    color: #b7b7b7;
+    text-decoration: none;
+}
+
+.boardPageTitle{
+	margin-top: 10px;
+	padding-bottom: 10px;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+/* 글 쓰기 */
+.boardWriteTitle{
+	border-top:1px solid #ccc;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.boardWriteTitle td, th{
+	border-bottom: 1px solid #ccc;
+	padding: 10px 0px;
+}
+
+.boardWriteTextArea{
+	resize: none;
+	width: 99%;
+	height: 100px;
+}
+
+.boardWriteTable tr{
+	height: 35px;
+}
+
+.boardReadBtnGroup{
+	float: right;
+	padding-top: 10px;
+}
+
+
+/* 각종 버튼 */
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  text-decoration: none;
+  height:40px;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.btnLogin {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  text-decoration: none;
+  height:40px;
+  width: 75px;
+}
+
+.btnLogin:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.btnGuestBook {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  text-decoration: none;
+  height:30px;
+  width: 75px;
+}
+
+.btnGuestBook {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.mainImg{
+	text-align: center;
+}
+
+.mainImg img{
+	height: 5em;
+	-webkit-transition: -webkit-transform .15s linear;
+}
+
+.mainImg img:HOVER{
+	-webkit-transform: scale(6);
+}
+
+.mainImg div{
+	font-size: 5em;
+}
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON 사용</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var jsonObject = {"name":"김기정", "age": 30 };
+console.log(typeof jsonObject);
+console.log(jsonObject.name);
+console.log(jsonObject.age);
+
+
+// string -> json object
+var jsonTxt = '{"ssn": "87342065", "name": "김기정"}';
+var object = JSON.parse(jsonTxt);
+console.log(object.ssn + ", "+ object.name);
+
+jsonTxt = '[{"ssn": "87342065", "name": "김기정"},' +
+           '{"ssn": "88342065", "name": "박기정"},' +
+           '{"ssn": "89342065", "name": "최기정"},' +
+           '{"ssn": "90342065", "name": "이기정"}]';
+var array = JSON.parse(jsonTxt);
+for ( var i in array) {
+	console.log(array[i].ssn + "," + array[i].name);	
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

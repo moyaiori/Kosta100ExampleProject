@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../style/index.css">
+
+<title>kosta 100 Lee HomePage(join)</title>
+</head>
+<body>
+
+	<header>
+		<div class="headerFont">
+			<a href="http://localhost/MyHomePage/jsp/view/index.html">이광용의 웹
+				다이어리</a>
+		</div>
+		<div class="headerView">
+			<dl class="mainList">
+				<dd>
+					<a href="http://localhost/MyHomePage/jsp/view/index.html">소&nbsp;&nbsp;&nbsp;개</a>
+				</dd>
+				<dd>
+					<a href="http://localhost/MyHomePage/jsp/view/guestBook.html">방
+						명 록</a>
+				</dd>
+				<dd>
+					<a href="http://localhost/MyHomePage/jsp/view/board.html">게 시 판</a>
+				</dd>
+				<dd>
+					<a href="http://localhost/MyHomePage/jsp/view/download.html">자
+						료 실</a>
+				</dd>
+			</dl>
+		</div>
+
+	</header>
+
+
+
+	<div class="mainView">
+		<div class="contentView">
+			<h1>회 원 가 입</h1>
+			<form action="get">
+				<table style="border-collapse: collapse;">
+					<tbody class="joinTableBody">
+						<tr>
+							<th>이름</th>
+							<td><input type="text" placeholder="홍길동"></td>
+						</tr>
+						<tr>
+							<th>아이디</th>
+							<td><input type="text" placeholder="hong"></td>
+						</tr>
+						<tr>
+							<th>비밀번호</th>
+							<td><input type="password"></td>
+						</tr>
+						<tr>
+							<th>비밀번호 확인</th>
+							<td><input type="password"></td>
+						</tr>
+						<tr>
+							<th>이메일</th>
+							<td><input class="emailTF1" type="email"> @ <select></select>
+								<input class="emailTF2" type="email" placeholder="email.net"></td>
+						</tr>
+						<tr>
+							<th>휴대번호</th>
+							<td><select></select> - <input class="telTF" type="tel">
+								- <input class="telTF" type="tel"></td>
+						</tr>
+						<tr>
+							<th style="border-bottom: 0px solid">자기소개</th>
+							<td style="border-bottom: 0px solid"><textarea
+									style="resize: none" cols="60" rows="10"
+									placeholder="간략한 자기소개를 작성해주세요"></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+				<div style="text-align: center">
+					<button>회원가입</button>
+					&nbsp;&nbsp;
+					<button>취소</button>
+				</div>
+			</form>
+		</div>
+		
+		
+		
+		
+		<div class="loginView">
+			<div class="loginHeaer">로 그 인</div>
+			<div class="loginBox">
+				<input type=text class="loginTF" name="loingId" id="loingId" size=15
+					placeholder="아이디"> <input type=password class="loginTF"
+					name="loingPw" name="loingPw" size=15 placeholder="비밀번호">
+				<div class="loginButtonBox">
+					<button>로그인</button>
+					&nbsp; <input type="button" name="join" value="회원가입"
+						onclick="location.href='http://localhost/MyHomePage/jsp/view/join.html'">
+				</div>
+			</div>
+		</div>
+		<div class="sideMenu">사이드 메뉴</div>
+	</div>
+
+
+	<footer>
+		<div>made in LKY</div>
+	</footer>
+
+</body>
+
+
+</html>

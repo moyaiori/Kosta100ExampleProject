@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+<script>
+	function createRequest() {
+		var xhr = null;
+		try {
+			xhr = new XMLHttpRequest();
+		} catch (e) {
+			// 익스플로러 6 이하
+			xhr = new ActiveXObject("Msxml2.XMLHTTP");
+		}
+
+		return xhr;
+	}
+
+	window.onload = function() {
+
+		var xhr = new createRequest();
+
+		document.getElementById("send").onclick = function() {
+			var value = document.getElementsByName("id")[0].value
+			
+			if(value == null || value.trim().length == 0){
+				alert("아이디를 입력하여 주세요.");
+				document.getElementById("id").focus();
+			}
+			
+			xhr.open("post", "data2.jsp", true);
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			xhr.send("id=" + value);
+		};
+		
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4) {
+				if (xhr.status == 200) {
+					setview(xhr.responseText);
+				} else if (xhr.status == 400 || xhr.status == 404) {
+					alert("페이지를 찾을수 없습니다.");
+				} else {
+					alert("서버 장애가 발생하였습니다.");
+				}
+			} else {
+				console.log("데이터 수신중");
+			}
+		}
+	}
+	
+	function setView(message){
+		document.getElementById("hello").innerHTML = message;
+	}
+	
+</script>
+</head>
+<body>
+	<input type="text" name="id">
+	<span id="hello"></span>
+	<br>
+	<input type="button" value="전송" id="send">
+</body>
+</html>

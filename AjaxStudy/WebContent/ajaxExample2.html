@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+<script>
+
+function createRequest(){
+	var xhr = null;
+	try{
+		xhr = new XMLHttpRequest();
+	} catch (e) {
+		// 익스플로러 6 이하
+		xhr = new ActiveXObject("Msxml2.XMLHTTP");
+	}
+	
+	return xhr;
+}
+
+</script>
+</head>
+<body>
+<script>
+
+// 서버에 비동기 요청을 위한 XMLHttpRequest 객체 생성
+var xhr = new createRequest();
+
+xhr.onreadystatechange = function(){
+	if(xhr.readyState == 4){
+		if(xhr.status == 200){
+			document.body.innerHTML = xhr.responseText;
+		}else if(xhr.status == 400 || xhr.status == 404){
+			alert("페이지를 찾을수 없습니다.");
+		}else{
+			alert("서버 장애가 발생하였습니다.");
+		}
+	}else{
+		document.body.innerHTML = "데이터 수신중";
+	}
+}
+
+xhr.open("post", "data2.jsp", true);
+xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+xhr.send("id=moya");
+
+
+</script>
+
+</body>
+</html>

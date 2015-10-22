@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 네임스페이스(사용영역) 설정 -->
+<mapper namespace="kr.or.kosta.employee">
+	<!-- 기본 내장된 별칭들 -->
+	<!-- byte, short, int, long, float, double, boolean, object, string, collection, list, arraylist, map, hashmap, iterator -->
+	
+	
+	<!-- 전체사원 조회를 위한 SQL 매핑 -->
+	<select id="selectAll" resultType="kr.or.kosta.employee.domain.Employee" >
+	<!-- <select id="selectAll" resultType="employee"> -->
+		SELECT employee_id AS "id", first_name AS "firstName", last_name AS "lastName", email AS "email", phone_number AS "phoneNumber", TO_CHAR(hire_date, 'YYYY-MM-DD') AS "hireDate", salary AS "salary"
+		FROM employees
+		ORDER BY hire_date ASC
+	</select>
+	
+	
+	<!-- 사원번호로 사원 조회 -->
+	<select id="selectEmployeesById"  parameterType="int" resultType="employee">
+		SELECT employee_id "id", first_name "firstName", last_name "lastName", email "email", phone_number "phoneNumber", TO_CHAR(hire_date, 'YYYY-MM-DD') "hireDate", salary "salary"
+		FROM employees
+		WHERE employee_id = #{value}
+	</select>
+	
+	
+	<!-- 급여범위로 사원 검색 -->
+	<select id="selectEmployeesBySalary"  parameterType="java.util.HashMap" resultType="employee">
+		SELECT employee_id "id", first_name "firstName", last_name "lastName", email "email", phone_number "phoneNumber", TO_CHAR(hire_date, 'YYYY-MM-DD') "hireDate", salary "salary"
+		FROM employees
+		WHERE salary BETWEEN #{min} AND #{max}
+		<!-- WHERE salary &gt;= #{min} AND salary &lt;= #{max} -->
+		<!-- WHERE salary <= #{min} AND salary &lt;= #{max} -->
+	</select>
+	
+	
+	<!-- 성(last_name)으로 사원 검색(와일드카드 검색) -->
+	<select id="selectEmployeesByLastName"  parameterType="java.lang.String" resultType="employee">
+		SELECT employee_id "id", first_name "firstName", last_name "lastName", email "email", phone_number "phoneNumber", TO_CHAR(hire_date, 'YYYY-MM-DD') "hireDate", salary "salary"
+		FROM employees
+		WHERE UPPER(last_name) like #{lastName}
+	</select>
+	
+	
+	<!-- HashMap을 이용한 검색 : 조인 시 유용 -->
+	<select id="selectEmployeesWithDepartment"   resultType="java.util.HashMap">
+		SELECT e.employee_id "id", e.first_name "firstName", e.last_name "lastName", d.department_name "departmentName"
+		FROM employees e JOIN departments d
+		ON e.department_id = d.department_id
+	</select>
+	
+	
+	<!-- 자주 사용되고, 빈의 프로퍼티 이름과 테이블 컬럼 이름이 다른 경우 resultMap 설정 -->
+	<resultMap  id="employeeResult" type="employee">
+		<result property="id"   column="employee_id"/>
+		<result property="email"  column="email"/>
+		<result property="phoneNumber" column="phone_number"/>
+		<result property="hireDate" column="hire_date"/>
+	</resultMap>
+	
+	
+	<!-- 전체사원 조회 -->
+	<select id="selectAll2" resultMap="employeeResult">
+		SELECT employee_id, email, phone_number, TO_CHAR(hire_date, 'YYYY-MM-DD') "hire_date"
+		FROM employees
+		ORDER BY hire_date ASC
+	</select>
+	
+	
+	<!-- 사원 등록 -->
+	<insert id="insertEmployee" parameterType="employee">
+		INSERT INTO employees(employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, manager_id, department_id)
+		VALUES(employees_seq.NEXTVAL, #{firstName}, #{lastName}, #{email}, #{phoneNumber}, to_date(#{hireDate} , 'YYYY-MM-DD'), #{jobId}, #{salary}, #{managerId}, #{departmentId}) 
+	</insert>
+	
+	
+	<!-- 사원 정보 수정 -->
+	<!-- 
+	<update id="updateEmployee" parameterType="employee">
+		UPDATE employees
+		SET salary = #{salary}
+		WHERE employee_id = #{id}
+	</update>
+	 -->
+	
+	<!-- 사원 정보 수정(JSTL set, if 태그를 이용한 동적 SQL) -->
+	<update id="updateEmployee" parameterType="employee">
+		UPDATE employees
+		<set>
+	        <if test="firstName != null">first_name = #{firstName},</if>
+	        <if test="lastName != null">last_name = #{lastName},</if>
+	        <if test="salary != null">salary = #{salary}</if>
+	        <!-- MyBatis는 SET절의 끝에 콤마(,)가 있으면 제거 -->
+	    </set>
+	    WHERE employee_id = #{id}
+	</update>
+	
+	
+	<!-- 사원 삭제 -->
+	<delete id="deleteEmployee" parameterType="java.lang.Integer">
+		DELETE FROM employees
+		WHERE employee_id = #{value}
+	</delete>
+	
+	<!-- 동적 SQL -->
+	<select id="dynamicSQL" parameterType="java.util.HashMap" resultType="employee">
+		SELECT employee_id "id", first_name "firstName", salary
+		FROM employees
+		<if test="searchType != null">
+			<choose>
+				<when test="searchType == 'id'">
+				WHERE employee_id = #{searchValue}
+				</when>
+				<when test="searchType == 'name'">
+				WHERE first_name like #{searchValue}
+				</when>
+				<otherwise></otherwise>
+			</choose>
+		</if>
+	</select>
+		
+</mapper>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+                          "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- MyBatis Framework 전역 설정 파일 -->
+<configuration>
+	
+	<!-- DB연결 설정 파일 패스 설정 -->
+	<properties resource="resource/config/db-config.properties"/>
+	
+	<!--  MyBatis에서 사용할 사용자 정의 JavaBean 별칭 등록 -->
+	<typeAliases>
+		<typeAlias type="kr.or.kosta.employee.domain.Employee" alias="employee"/>
+	</typeAliases>
+	
+	<!-- 다중 DB 환경 설정 가능 -->
+	<environments default="development">
+		
+		<!-- MyBatis에서 사용할 데이터베이스 관련 정보(트랜잭션 관리자, 데이터 소스) 설정 -->
+		<environment id="development">
+			<!-- 트랜잭션 관리 방법 설정 -->
+			<!-- 
+			  - JDBC : JDBC API의 commit(), rollback() 메소드를 이용하여 MyBatis 자체에서 트랜잭션 관리
+			  - MANAGED : WAS(WebLogic, WebSphere, JBoss 등)에서 지원하는 트랜잭션 관리 기능 이용			
+			 -->
+			<transactionManager type="JDBC" />
+			
+			<!-- MyBatis는 JDBC 표준 규약인 DataSource 구현체를 이용하여 DB 연결(Connection 생성) -->
+			<!-- MyBatis가 지원하는 DataSource 유형 -->
+			<!-- 
+			  - UNPOOLED : DB 커넥션 요청할 때마다 DriverManager를 이용하여 Connection 객체 생성, 단순한 애플리케이션 개발 시 적합
+			  - POOLED   : ConnectionPool로 부터 Connection 취득, 엔터프라이즈 웹 애플리케이션 개발 시 적합
+			  - JNDI     : WAS에서 제공하는 DataSource 사용, 엔터프라이즈 웹 애플리케이션 개발 시 적합
+			 -->
+			<dataSource type="POOLED">
+				<!-- db-config.properties 설정 참조 -->
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+				<property name="poolMaximumActiveConnections" value="3"/> <!-- Default 10 -->
+				<property name="poolMaximumIdleConnections" value="2"/>   <!-- Default 5 -->
+				<property name="poolMaximumCheckoutTime" value="10000"/>  <!-- Default 20000 -->
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!-- SQL 매핑 파일 패스 설정 -->
+	<mappers>
+		<!-- 클래스패스 경로 사용 -->
+		<mapper resource="resource/mapper/EmployeeMapper.xml" />
+		<mapper resource="kr/or/kosta/ems/employee/dao/EmployeeDao.xml" />
+		<!-- <mapper resource="" /> -->
+		
+		<!-- 파일시스템 경로 사용 -->
+		<!-- <mapper url="file:///c:/someProject/mapper/SomeMapper.xml" />	 -->
+	</mappers>
+
+</configuration>

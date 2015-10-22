@@ -31,7 +31,8 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>defaultObject</servlet-name>
-  	<url-pattern>/defaultObject.action</url-pattern>
+  	<!-- <url-pattern>/defaultObject.action</url-pattern> -->
+  	<url-pattern>/</url-pattern>
   </servlet-mapping>
   
 </web-app>
