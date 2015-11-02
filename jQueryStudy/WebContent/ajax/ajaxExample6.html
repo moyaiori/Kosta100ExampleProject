@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ajax</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<style type="text/css">
+
+table{
+	border-collapse: collapse;
+}
+
+td, th{
+	border : 1px solid black;
+	text-align: center;
+}
+</style>
+<script>
+$(function() {
+	
+	function setTable(xml){
+		var html = "";
+
+		html += "<table>";
+		html += "<tr>";
+		html += "<th>학번</th>";
+		html += "<th>이름</th>";
+		html += "<th>주소</th>";
+		html += "<th>점수</th>";
+		html += "</tr>";
+		$(xml).find("student").each(function(index, value){
+			
+			html += "<tr>";
+			html += "<td>" + $(this).find("roll").text() + "</td>";
+			html += "<td>" + $(this).find("name").find("first-name").text() + " " + $(this).find("name").find("last-name").text() + "</td>";
+			html += "<td>" + $(this).find("address").find("street").text() + " " + $(this).find("address").find("city").text() + $(this).find("address").find("state").text() + "</td>";
+			html += "<td>" + $(this).find("marks").text() + "</td>";
+			html += "</tr>";
+		});
+		html += "</table>";
+		$("#message").html(html);
+	}
+	
+	$.ajax({
+		url : "students.jsp",
+		dataType : "xml",
+		success : function(xml) {
+			setTable(xml);
+		}
+	});
+	return false;
+});
+</script>
+</head>
+<body>
+<div id="message"></div>
+</body>
+</html>

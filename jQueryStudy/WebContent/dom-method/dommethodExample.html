@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dom-Method-Example</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<script>
+$(function(){
+	/*
+	$("h3").filter(":even").css({
+		background: "black",
+		color: "white"
+	});
+	*/
+	
+	$("h3").filter(function(index){
+		return index % 2 == 0;
+	}).css({
+		background: "black",
+		color: "yellow"
+	});
+});
+</script>
+</head>
+<body>
+
+<h3>Header - 0</h3>
+<h3>Header - 1</h3>
+<h3>Header - 2</h3>
+<h3>Header - 3</h3>
+<h3>Header - 4</h3>
+<h3>Header - 5</h3>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<script>
+
+//$(document).ready(function(){});
+
+$(function(){
+	// 이벤트소스에 이벤트핸들러 등록
+	$("h1").on("click", function(event){
+		$(this).html(function(index, html){
+			return 	html + "★";		
+		});		
+	});
+	
+	// 다중 이벤트 핸들러 등록
+	$("h1").on({
+		mouseenter: function(){
+			$(this).css("background", "black");
+		},
+		mouseleave: function(){
+			$(this).css("background", "white");
+		}
+	});
+	
+	$("h1").click(function(event){
+		alert(event);
+	});
+});
+</script>
+</head>
+<body>
+	<h1>Header-0</h1>
+	<h1>Header-1</h1>
+	<h1>Header-2</h1>
+</body>
+</html>
+
+
+

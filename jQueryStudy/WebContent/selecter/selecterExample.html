@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selecterExample</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<script>
+$(function(){
+	//$("*").css("color","red");
+	//$("h1, p").css("color", "green");
+	/*
+	$("#target").css("color", "tomato").css("background","green").click(function(){
+		alert("야호");
+	});
+	*/
+	
+	$('#target').css({
+		color : "red",
+		background : "black",
+		border: "1px solid"
+	});
+});
+</script>
+</head>
+<body>
+
+<h1>Header - 0</h1>
+<h1 id="target">Header - 1</h1>
+<h1>Header - 2</h1>
+
+</body>
+</html>

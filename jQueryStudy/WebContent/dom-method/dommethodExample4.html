@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dom-Method-Example</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<script>
+$(function(){
+	//$("img").attr("width", 200);
+	/*
+	$("img").attr("width", function(index){
+		return (index + 1) * 100;
+	});
+	*/
+	
+	$("img").attr({
+		width : function(index){
+			return (index + 1) * 100;
+		},
+		height :  function(index){
+			return (index + 1) * 200;
+		}
+	});
+	
+	$("img").removeAttr("width");
+	
+});
+</script>
+</head>
+<body>
+
+<img alt="" src="../images/icons4668.png">
+<img alt="" src="../images/icons4671.png">
+<img alt="" src="../images/icons4672.png">
+
+
+</body>
+</html>

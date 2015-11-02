@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>효과</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<script>
+$(function() {
+	$("button").click(function(){
+		//$(".page").toggle("slow"); // slow, nomal, fast
+		//$(".page").slideToggle("slow"); // slow, nomal, fast
+		//$(".page").fadeToggle(5000); // slow, nomal, fast
+		$(".page").fadeToggle("slow", "linear", function(){
+			alert("효과 완료.");
+		});
+	});
+});
+</script>
+<body>
+<button>Toggle Show</button> 
+<div class="page">
+	<h1>Lorem ipsum dolor sit amet</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+
+</body>
+</html>

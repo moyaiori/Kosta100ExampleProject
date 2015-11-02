@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<script src="js/jquery-2.1.4.js"></script>
+<script>
+/*
+window.onload = function(event){
+	alert("로드완료");
+	window.document.body.innerHTML = "로드 완료 됫으용";
+}
+
+window.onload = function(event){
+	window.document.body.innerHTML = "덥덥";
+}*/
+
+// jQuery를 이용한 이벤트 처리
+var array = $(document);
+
+array.ready(function(){
+	alert("로드완료");
+	//window.document.body.innerHTML = "로드 완료 됫으용";
+	//$("h1").hide();
+
+	var array = $("h1");
+	
+	/*
+	for(var key in array){
+		console.log(key + ":" + array[key]);
+	}*/
+	array.html("야임마");
+	
+});
+
+array.ready(function(){
+	alert("다중 이벤트 핸들러 등록1");
+});
+
+</script>
+</head>
+<body>
+
+<h1>jQuery 참 쉬워용~~~~~~!!!!!!</h1>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

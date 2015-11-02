@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dom-Method-Example</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<style type="text/css">
+
+.item0{
+	background: yellow;
+	border:	20px solid red;
+}
+
+.item1{
+	background: blue;
+	border:	20px solid red;
+}
+
+.item2{
+	background: gray;
+	border:	20px solid red;
+}
+</style>
+<script>
+$(function(){
+	//$("h1").addClass("item");
+	$("h1").addClass(function(index){
+		return "item" + index;
+	});
+	
+	$("h1").removeClass("item0");
+	
+});
+</script>
+</head>
+<body>
+
+<h1>Header - 0</h1>
+<h1>Header - 1</h1>
+<h1>Header - 2</h1>
+
+</body>
+</html>

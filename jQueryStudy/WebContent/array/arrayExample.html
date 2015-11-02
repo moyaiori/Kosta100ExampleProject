@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열 관리</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<script>
+
+$(function(){
+	var array = [
+	  { name: "Hanbit Media", link : "http://hanb.co.kr" },
+	  { name: "Naver", link : "http://naver.com" },
+	  { name: "Daum", link : "http://daum.net" },
+	  { name: "google", link : "http://google.co.kr" },
+     ];
+
+	var output = "";
+	
+	$.each(array, function(index, item){
+		output += "<a href = '"+ item.link +"'> " + item.name + "</a><br>";
+	});
+	
+	$("body").html(output);
+});
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

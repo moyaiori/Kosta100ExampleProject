@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ajax</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<script>
+$(function() {
+	// Ajax 이벤트 관리(상태별 이벤트리스너 등록)
+	$(document).ajaxComplete(function() {
+		$("#ajax_event").append("<h1>Ajax 요청 완료</h1>");
+	}).ajaxStart(function() {
+		$("#ajax_event").append("<h1>Ajax 요청 시작</h1>");
+	}).ajaxSend(function() {
+		$("#ajax_event").append("<h1>Ajax 요청 전송</h1>");
+	}).ajaxSuccess(function() {
+		$("#ajax_event").append("<h1>Ajax 요청 성공</h1>");
+	}).ajaxError(function() {
+		$("#ajax_event").append("<h1>Ajax 요청 실패</h1>");
+	});
+	
+	$("#wrap").load("welcome1.jsp");
+});
+</script>
+</head>
+<body>
+	<div id="ajax_event"></div>
+
+	<div id="wrap"></div>
+</body>
+</html>

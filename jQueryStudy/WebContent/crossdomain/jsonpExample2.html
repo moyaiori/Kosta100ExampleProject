@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery 크로스도메인 데이터 통신</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<script>
+$(function() {
+	// jQuery를 사용한 JSONP 요청
+	/*
+	$.ajax("http://api.flickr.com/services/feeds/photos_public.gne", {
+		dataType: "jsonp",
+		jsonp: "jsoncallback",
+		data: {
+			tags: "moon",
+			format: "json"
+		},
+		success: function(data){
+			console.log(data);
+		}
+	});
+	*/
+	// 심플하게
+	$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", 
+			{tags: "moon",format: "json"}, function(data){
+		console.log(data);
+		//alert(data.items[0].media.m);
+		$.each(data.items, function(index, item){
+			$("<img />").attr("src", item.media.m).appendTo("body");
+		});
+	});
+});
+</script>
+</head>
+<body>
+jQuery 크로스도메인 실습
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<script src="js/jquery-2.1.4.js"></script>
+<script>
+
+$(document).ready(function(){});
+// 축약 가능
+$(function(){
+	//$("h1").html("안녕하세요");
+	$("h1").html(function(index){
+		return "안녕하세요 : " + index;
+	});
+	
+	$("h1").click(function(){
+		//alert("클릭이요");
+		//$(this).slideUp();
+		$(this).fadeOut();
+		$(this).fadeIn();
+	});
+	
+});
+
+</script>
+</head>
+<body>
+
+<h1></h1>
+<h1></h1>
+<h1></h1>
+<h1></h1>
+<h1></h1>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

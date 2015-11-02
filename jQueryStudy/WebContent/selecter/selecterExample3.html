@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selecterExample</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<script>
+
+$(function(){
+	$("input[type = 'text']").css("background","red");
+	$("input[type = 'text']").val("아이디").click(function(){
+		$(this).val("");
+	});
+	
+	
+	$("input[type *= 't']").css("background", "green");
+	$("input[type ^= 'p']").css("background", "black");
+	$("input[type ~= 'password']").css("background", "orange");
+	$("input[type $= 'e']").css("background", "yellow");
+	
+	
+});
+
+</script>
+</head>
+<body>
+	<input type="text"/>
+	<input type="password" />
+	<input type="radio" />
+	<input type="checkbox" />
+	<input type="file" />
+</body>
+</html>

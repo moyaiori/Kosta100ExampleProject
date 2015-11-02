@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selecterExample</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<script>
+
+$(function(){
+	$("input:text").css("background","red");
+	alert($("input:checkbox:checked").val());
+	
+	/*
+	setTimeout(function(){
+		var value = $("select > option:selected").val();
+		alert(value);
+	}, 5000);
+	*/
+	
+	$("select").change(function(){
+		var item = $("select > option:selected").val();
+		alert(item + "을 선택하셧습니다.");
+	})
+	
+	
+});
+
+</script>
+</head>
+<body>
+	<input type="text"/>
+	<input type="password" />
+	<input type="radio" />
+	<input type="checkbox" />
+	<input type="file" />
+	
+	<input type="checkbox" checked="checked" value="스포츠">스포츠
+	<input type="checkbox">잠
+	
+	<select>
+		<option>Apple</option>
+		<option>Bag</option>
+		<option>Cat</option>
+		<option>Dog</option>
+		<option>Elephant</option>
+	</select>
+	
+</body>
+</html>

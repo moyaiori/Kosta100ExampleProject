@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<script src="/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$.ajax({
+		url : "bookList.jsp",
+		dataType : "xml",
+		success : function(xml) {
+			onMessage(xml);			
+		}
+	});
+	return false;
+});
+
+function onMessage(xml){
+	var table = "<table border='1' width='80%'>";
+	table += "<tr>";
+	table += "<th>순서</th><th>제목</th><th>저자</th><th>출판사</th><th>가격</th><th>장르</th>";
+	table += "</tr>";
+	
+	$(xml).find("book").each(function(index){
+		var book = $(this);
+		var no = index + 1;
+		var title = book.find("title").text();
+		var author = book.find("author").text();
+		var publisher = book.find("publisher").text();
+		var price = book.find("price").text();
+		var kind = book.attr("kind");
+		
+		table += "<tr>";
+		table += "<td>"+no+"</td>";
+		table += "<td>"+title+"</td>";
+		table += "<td>"+author+"</td>";
+		table += "<td>"+publisher+"</td>";
+		table += "<td>"+price+"</td>";
+		table += "<td>"+kind+"</td>";
+		table += "</tr>";	
+		
+	});
+	
+	table += "</table>";
+	$("#message").html(table);
+	// 살짝 인라인CSS 적용
+	$("tr:first").css("background", "lightgreen");
+}
+</script>
+</head>
+<body>
+<div id="message"></div>
+</body>
+</html>

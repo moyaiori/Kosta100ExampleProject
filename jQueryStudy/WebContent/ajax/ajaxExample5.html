@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ajax</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<script>
+$(function() {
+	// JSON 수신
+	$.getJSON("drinkinfo.jsp",function(data) {
+		var html = "";
+		html += "<select>";
+		$.each(data, function(index, value){
+			html += "<option>"+ value.optiontext +"</option>";
+		});
+		html += "</select>";
+		$("#message").html(html);
+	});
+});
+</script>
+</head>
+<body>
+<div id="message"></div>
+</body>
+</html>

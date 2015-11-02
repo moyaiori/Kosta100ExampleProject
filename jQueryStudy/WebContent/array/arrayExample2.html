@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열 관리</title>
+<script src="../js/jquery-2.1.4.js"></script>
+<script>
+
+$(function(){
+	$("h1").each(function(index, element){
+		/*
+		switch(index){
+		case 0: $(this).css("background", "red");break;
+		case 1: $(this).css("background", "yellow");break;
+		case 2: $(this).css("background", "green");break;
+		case 3: $(this).css("background", "gold");break;
+		case 4: $(this).css("background", "silver");break;
+		}
+		*/
+		if(index % 2 == 0){
+			$(this).css("background", "red");
+		}else{
+			$(this).css("background", "yellow");
+		}
+	});
+});
+
+</script>
+</head>
+<body>
+
+<h1>item - 0</h1>
+<h1>item - 1</h1>
+<h1>item - 2</h1>
+<h1>item - 3</h1>
+<h1>item - 4</h1>
+
+</body>
+</html>
