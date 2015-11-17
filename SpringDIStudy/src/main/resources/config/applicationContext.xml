@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 서블릿으로 비교하면 web.xml 역할과 동일 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Spring Ioc Container가 생성해야 할 POJO 등록 -->
+	<!-- <bean id="messageProvider" class="kr.or.kosta.springframework.beans.HelloWorldMessageProvider"/> -->
+	<bean id="messageProvider" class="kr.or.kosta.springframework.beans.HiWorldMessageProvider"/>
+	
+	<bean id="messageRenderer" class="kr.or.kosta.springframework.beans.DefaultMessageRenderer" scope="prototype">
+		<constructor-arg ref="messageProvider"></constructor-arg>
+		<!-- <property name="messageProvicer" ref="messageProvider"></property> -->
+	</bean>
+	
+	<bean id="user" class="kr.or.kosta.springframework.beans.User">
+		<property name="id"  value="bangry"/>
+		<property name="passwd"  value="1111"/>
+		<property name="name"  value="김기정"/>
+	</bean>
+	
+	
+	<bean id="someService" class="kr.or.kosta.springframework.beans.SomeService">
+		<property name="age" value="40"/> <!-- 자동 형변환 -->
+		<property name="name" value="김기정"/>
+		<property name="user" ref="user"/>
+		<property name="nameList">
+			<list value-type="java.lang.String">
+				<value>진민경</value>
+				<value>김민희</value>
+				<value>최승철</value>
+			</list>
+		</property>
+		
+		<property name="userList">
+			<list value-type="kr.or.kosta.springframework.beans.User">
+				<bean id="u1" class="kr.or.kosta.springframework.beans.User">
+					<property name="id"  value="bangry"/>
+					<property name="passwd"  value="1111"/>
+					<property name="name"  value="김기정"/>
+				</bean>
+				<bean id="u2" class="kr.or.kosta.springframework.beans.User">
+					<property name="id"  value="bangry2"/>
+					<property name="passwd"  value="1111"/>
+					<property name="name"  value="김기정2"/>
+				</bean>
+			</list>
+		</property>	
+		
+	</bean>
+	
+</beans>
+
+
+
+
+
+
+
